@@ -38,7 +38,7 @@
 						<a href="https://localhost/wordpress/my-account/" title="My Account">My Account</a>
 					</li>
 					<div class="form-login">
-						<li class="poup-login">
+						<li class="poup-login active">
 							<a href="#">Log in</a>
 						</li>
 						<div class="clear"></div>
