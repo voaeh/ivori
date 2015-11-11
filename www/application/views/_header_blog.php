@@ -1,27 +1,48 @@
-<div class="header-left">
-	<img src="<?php echo base_url('public/img/common/logo.png');?>" />
-</div>
-<div class="header-right">
-	<ul id="menu-pc">
-		<li>
-			<a href="<?php echo site_url('top'); ?>">HOME</a>
-		</li>
-		<li>
-			<a href="<?php echo site_url('shop'); ?>">SHOP</a>
-		</li>
-		<li>
-			<a href="">BLOG</a>
-		</li>
-		<li>
-			<a href="">MY ACCOUNT</a>
-		</li>
-		<li>
-			<a href="">CONTACT</a>
-		</li>
-		<li>
-			<a href="">ABOUT US</a>
-		</li>
-	</ul>
+<article id="organic-header-grid">
+            <div class="row">
+                <div class="fix-cover">
+                            </div>
+                <div class="row" id="bg-cover">
+                    <div class="container"> 
+                        <div class="cover-top">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                <div class="category-list blog-left">
+                                                                            </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="category-name"><?php echo $current_page ?></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+<div id="header-blog">
+	<div class="header-left">
+		<img src="<?php echo base_url('public/img/common/logo.png');?>" />
+	</div>
+	<div class="header-right">
+		<ul id="menu-pc">
+			<li>
+				<a href="<?php echo site_url('top'); ?>">HOME</a>
+			</li>
+			<li>
+				<a href="<?php echo site_url('shop'); ?>">SHOP</a>
+			</li>
+			<li>
+				<a href="">BLOG</a>
+			</li>
+			<li>
+				<a href="">MY ACCOUNT</a>
+			</li>
+			<li>
+				<a href="">CONTACT</a>
+			</li>
+			<li>
+				<a href="">ABOUT US</a>
+			</li>
+		</ul>
+	</div>
 </div>
 <div class="clear"></div>
 
@@ -77,3 +98,5 @@
 		</div>
 	</div>
 </div>
+
+<div class="clear"></div>

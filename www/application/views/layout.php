@@ -17,8 +17,11 @@
   <div id="wrap">
   
     <!--header-->
-	<?php $this->load->view('_header.php');?>
-    
+	<?php if ($current_page == 'top') { ?>
+		<?php $this->load->view('_header.php');?>
+    <?php }else { ?>
+		<?php $this->load->view('_header_blog.php');?>
+	<?php } ?>
 
 	<div id="content">
 	<?php $this->load->view($content);?>
