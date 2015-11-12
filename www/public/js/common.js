@@ -8,6 +8,20 @@ $(this).ready(function(){
 		$(".menu-right-layout").fadeOut();
     });
 	
+	$("#grid").click(function () {
+		$("#grid").addClass("active");
+		$("#list").removeClass("active");
+		$("#product-list").fadeOut();
+		$("#product-gallery").fadeIn();
+    });
+	
+	$("#list").click(function () {
+		$("#grid").removeClass("active");
+		$("#list").addClass("active");
+		$("#product-list").fadeIn();
+		$("#product-gallery").fadeOut();
+    });
+	
 	$('.single-item').slick({
 			dots: true,
 			slidesToShow: 1,
@@ -17,14 +31,6 @@ $(this).ready(function(){
 			arrows: false,
 	});
 	
-	/**$('.multi-item').slick({
-			dots: true,
-			slidesToShow: 5,
-		    slidesToScroll: 1,
-		    autoplay: true,
-		    autoplaySpeed:1000,
-			arrows: true,
-	});**/
 	
 	$('.multi-item').slick({
 	  dots: true,

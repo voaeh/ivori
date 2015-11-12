@@ -8,6 +8,13 @@ body{
 	font-family: 'Montserrat';
 }
 
-.feature-title, .feature-price{
+.feature-title, .feature-price, .product-hon-title,.product-hon-price{
 	font-size:20px;
+}
+.product-hon-text{
+	font-size:18px;
+}
+.navi{
+	font-size:16px;
+	color:#000000;
 }
