@@ -27,7 +27,7 @@
 			</div>
 		</div>
 		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-			<div class="product-right top-50">
+			<div class="product-right top-30">
 				<nav class="gridlist-toggle">
 					<a href="#" id="grid" title="Grid view" class="active"></a>
 					<a href="#" id="list" title="List view"></a>
@@ -36,10 +36,10 @@
 				
 				<div id="product-gallery">
 				<div class="shop-product">
-						<img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" />
+						<a href="<?php echo site_url('product'); ?>"><img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" /></a>
 						
 						<div class="feature-title">
-							Sample Shampoo
+							<a href="<?php echo site_url('product'); ?>">Sample Shampoo</a>
 						</div>
 						<div class="feature-line">
 						</div>
@@ -51,10 +51,10 @@
 						 </div>
 				</div>
 				<div class="shop-product">
-						<img src="<?php echo base_url('public/img/product/58.jpg');?>" class="img-100" />
+						<a href="<?php echo site_url('product'); ?>"><img src="<?php echo base_url('public/img/product/58.jpg');?>" class="img-100" /></a>
 						
 						<div class="feature-title">
-							Sample Shampoo
+							<a href="<?php echo site_url('product'); ?>">Sample Shampoo</a>
 						</div>
 						<div class="feature-line">
 						</div>
@@ -66,10 +66,10 @@
 						 </div>
 				</div>
 				<div class="shop-product">
-						<img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" />
+						<a href="<?php echo site_url('product'); ?>"><img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" /></a>
 						
 						<div class="feature-title">
-							Sample Shampoo
+							<a href="<?php echo site_url('product'); ?>">Sample Shampoo</a>
 						</div>
 						<div class="feature-line">
 						</div>
@@ -87,10 +87,10 @@
 			<div id="product-list">
 			<div class="shop-product-hon">
 					<div class="product-hon-img">
-						<img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" />
+						<a href="<?php echo site_url('product'); ?>"><img src="<?php echo base_url('public/img/product/57.jpg');?>" class="img-100" /></a>
 					</div>
 					<div class="product-hon-desc">
-						<div class="product-hon-title">Sample Shampoo</div>
+						<div class="product-hon-title"><a href="<?php echo site_url('product'); ?>">Sample Shampoo</a></div>
 						<div class="product-line">
 						<div class="product-hon-text">test product</div>
 						<div class="product-hon-price">450 Baht</div>
@@ -107,10 +107,10 @@
 			
 			<div class="shop-product-hon">
 					<div class="product-hon-img">
-						<img src="<?php echo base_url('public/img/product/58.jpg');?>" class="img-100" />
+						<a href="<?php echo site_url('product'); ?>"><img src="<?php echo base_url('public/img/product/58.jpg');?>" class="img-100" /></a>
 					</div>
 					<div class="product-hon-desc">
-						<div class="product-hon-title">Sample Shampoo</div>
+						<div class="product-hon-title"><a href="<?php echo site_url('product'); ?>">Sample Shampoo</a></div>
 						<div class="product-line">
 						<div class="product-hon-text">test product</div>
 						<div class="product-hon-price">450 Baht</div>

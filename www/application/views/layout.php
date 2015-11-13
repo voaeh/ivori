@@ -6,7 +6,8 @@
   <link rel="icon" href="<?php echo base_url('public/img/common/favicon.png');?>" type="image/gif" sizes="16x16">
   <link rel="stylesheet" href="<?php echo base_url('public/css/bootstrap.min.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/style.css');?>">
-  <link rel="stylesheet" href="<?php echo base_url('public/css/common.css');?>">
+  <link rel="stylesheet" media="(min-width:768px)" href="<?php echo base_url('public/css/common.css');?>">
+  <link rel="stylesheet" media="(max-width:767px)" href="<?php echo base_url('public/css/common-sm.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/slick.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/slick-theme.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/font-awesome.min.css');?>">
@@ -17,7 +18,8 @@
   <div id="wrap">
   
     <!--header-->
-	<?php if ($current_page == 'top') { ?>
+	<?php $permiss = array('top', 'product'); ?>
+	<?php if (in_array($current_page,$permiss)) { ?>
 		<?php $this->load->view('_header.php');?>
     <?php }else { ?>
 		<?php $this->load->view('_header_blog.php');?>

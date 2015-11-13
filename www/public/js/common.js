@@ -58,4 +58,22 @@ $(this).ready(function(){
 	  ]
 	});
 });
+
+$( window ).resize(function() {
+  if ($(window).width() <= 767 )
+  {
+	  $("#grid").addClass("active");
+	  $("#list").hide();
+	  $("#product-list").fadeOut();
+	  $("#product-gallery").fadeIn();
+  }
+  else
+  {
+	  $("#grid").addClass("active");
+	  $("#list").removeClass("active");
+	  $("#list").show();
+	  $("#product-list").fadeOut();
+	  $("#product-gallery").fadeIn();
+  }
+});
 	
