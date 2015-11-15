@@ -10,16 +10,16 @@
 			<a href="<?php echo site_url('shop'); ?>">SHOP</a>
 		</li>
 		<li>
-			<a href="">BLOG</a>
+			<a href="<?php echo site_url('blog'); ?>">BLOG</a>
 		</li>
 		<li>
-			<a href="">MY ACCOUNT</a>
+			<a href="<?php echo site_url('myaccount'); ?>">MY ACCOUNT</a>
 		</li>
 		<li>
-			<a href="">CONTACT</a>
+			<a href="<?php echo site_url('contact'); ?>">CONTACT</a>
 		</li>
 		<li>
-			<a href="">ABOUT US</a>
+			<a href="<?php echo site_url('about'); ?>">ABOUT US</a>
 		</li>
 	</ul>
 </div>
@@ -32,7 +32,7 @@
 			<div class="main-menu-right">
 				<ul>
 					<li>
-						<a href="http://localhost/wordpress/cart/">My cart ( 0 )</a>
+						<a href="<?php echo site_url('cart'); ?>">My cart ( 0 )</a>
 					</li>
 					<li>
 						<a href="https://localhost/wordpress/my-account/" title="My Account">My Account</a>

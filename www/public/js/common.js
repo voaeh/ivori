@@ -1,11 +1,13 @@
 $(this).ready(function(){
 	$("#menu-right-button").mouseenter(function () {
-		$("#menu-right-button").addClass("activelink-menu");
-		$(".menu-right-layout").fadeIn();
+		if($(".menu-right-layout").css('display') === 'none') {
+			$("#menu-right-button").addClass("activelink-menu");
+			$(".menu-right-layout").show();
+		}
     });
     $(".menu-right-layout").mouseleave(function () {
 		$("#menu-right-button").removeClass("activelink-menu");
-		$(".menu-right-layout").fadeOut();
+		$(".menu-right-layout").hide();
     });
 	
 	$("#grid").click(function () {

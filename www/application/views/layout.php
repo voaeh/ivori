@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="<?php echo base_url('public/css/style.css');?>">
   <link rel="stylesheet" media="(min-width:768px)" href="<?php echo base_url('public/css/common.css');?>">
   <link rel="stylesheet" media="(max-width:767px)" href="<?php echo base_url('public/css/common-sm.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('public/css/woocommerce.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('public/css/select2.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/slick.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/slick-theme.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/font-awesome.min.css');?>">
