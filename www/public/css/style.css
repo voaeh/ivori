@@ -2738,7 +2738,7 @@ ul#recentcoments .date{color:#CCC;font-size:12px;font-style:italic}.circle{borde
           position: absolute;
           height: 25px;
           width: 27px;
-          background: url('../images/icon-organic.png') no-repeat -292px -70px; }
+          background: url('../img/common/icon-organic.png') no-repeat -292px -70px; }
       
       .woocommerce-checkout .category-list .category-detail.active {
         color: #95a83f; }
@@ -3123,6 +3123,590 @@ ul#recentcoments .date{color:#CCC;font-size:12px;font-style:italic}.circle{borde
 #content-blog-full li {
     list-style: none;
 }
+
+/*------------------------------------------------------------------
+[7. Contact]
+*/
+  #organic-contact {
+    }
+    
+    #organic-contact:after {
+      content: '';
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      margin-top: 7px;
+      left: 0;
+      bottom: -25px; }
+    
+    #organic-contact .contact-left {
+      margin-left: 25%; }
+      @media only screen and (max-width: 769px) {
+        #organic-contact .contact-left {
+          margin-left: 5%; } }
+    
+    #organic-contact .img-map {
+      width: 370px;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+      max-width: 100%; }
+      
+      #organic-contact .img-map img {
+        position: absolute;
+        left: 50%;
+        right: auto;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%); }
+    
+    #organic-contact .origanic-address {
+      position: absolute;
+      top: 16%;
+      left: 28%;
+      background: #fff;
+      min-width: 370px;
+      display: none;
+      max-width: 100%; }
+      @media only screen and (max-width: 769px) {
+        #organic-contact .origanic-address {
+          left: 9%; } }
+      @media only screen and (max-width: 767px) {
+        #organic-contact .origanic-address {
+          min-width: 300px;
+          width: 300px;
+          left: 3%; } }
+      
+      #organic-contact .origanic-address .logo-map {
+        position: absolute;
+        left: 34.8%;
+        margin-top: -16%;
+        cursor: pointer; }
+        @media only screen and (max-width: 767px) {
+          #organic-contact .origanic-address .logo-map {
+            margin-top: -35%; } }
+      
+      #organic-contact .origanic-address .address-map {
+        padding-bottom: 60px; }
+        
+        #organic-contact .origanic-address .address-map img {
+          width: 100px;
+          margin: 21% 37% 7%; }
+        
+        #organic-contact .origanic-address .address-map span {
+          text-align: center;
+          display: block;
+          color: #898989; }
+    
+    #organic-contact .get-in {
+      font-size: 1.285714286em;
+      color: #252525;
+      position: relative;
+      margin-left: 45%;
+      width: 150px; }
+      @media only screen and (max-width: 767px) {
+        #organic-contact .get-in {
+          margin-left: 35%; } }
+      
+      #organic-contact .get-in:before {
+        content: '';
+        position: absolute;
+        height: 12px;
+        width: 12px;
+        left: -15px;
+        background: #a4935f;
+        margin-top: 7px; }
+      
+      #organic-contact .get-in:after {
+        content: '';
+        position: absolute;
+        height: 10px;
+        width: 20px;
+        background: url('../img/common/icon-organic.png') no-repeat -396px -117px;
+        right: 23px;
+        margin-top: 7px; }
+    
+    #organic-contact .select-contact {
+      position: relative;
+      margin-left: 25%;
+      }
+      @media only screen and (max-width: 767px) {
+        #organic-contact .select-contact {
+          margin-left: 0; } }
+      
+      #organic-contact .select-contact:before {
+        content: '';
+        position: absolute;
+        height: 10px;
+        width: 15px;
+        background: url('../img/common/icon-organic.png') no-repeat -370px -117px;
+        right: 40%;
+        top: 9px;
+        margin-top: 7px; }
+        @media only screen and (max-width: 767px) {
+          #organic-contact .select-contact:before {
+            right: 13%; } }
+    
+    #organic-contact .select-contact select {
+      padding: 5px 8px;
+      width: 62%;
+      border: none;
+      min-height: 40px;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+      margin-bottom: 10px;
+      left: 13%;
+      position: relative; }
+      @media only screen and (max-width: 767px) {
+        #organic-contact .select-contact select {
+          left: 22%; } }
+    
+    #organic-contact .select-contact select:focus {
+      outline: none; }
+    
+    #organic-contact #map-agency {
+      width: 100%;
+      height: 1052px; }
+      @media only screen and (max-width: 767px) {
+        #organic-contact #map-agency {
+          margin-top: 50px; } }
+    
+    #organic-contact .organic-menu-map {
+      position: relative;
+      padding: 0; }
+      @media only screen and (max-width: 767px) {
+        #organic-contact .organic-menu-map {
+          padding-left: 20px; } }
+      
+      #organic-contact .organic-menu-map li {
+        float: left;
+        list-style: none;
+        padding-right: 20px;
+        margin-top: 10px; }
+        
+        #organic-contact .organic-menu-map li a {
+          color: #898989; }
+    
+    #organic-contact .title-small-contact {
+      font-size: 0.857142857em;
+      color: #252525;
+      text-transform: capitalize;
+      padding-top: 100px; }
+    
+    #organic-contact .title-contact {
+      font-size: 2.857142857em;
+      text-transform: uppercase; }
+    
+    #organic-contact .desciption-contact {
+      color: #898989;
+      padding-right: 10%; }
+    
+    #organic-contact input {
+      border: none;
+      border-bottom: 1px solid #e8e4d9;
+      margin-top: 45px;
+      width: 93%; }
+    
+    #organic-contact .your-name {
+      float: left;
+      width: 48%; }
+    
+    #organic-contact .your-email {
+      float: left;
+      width: 48%; }
+    
+    #organic-contact .wpcf7-submit {
+      max-width: 170px;
+      margin-right: 7%;
+      background: transparent;
+      padding: 8px 20px;
+      text-transform: uppercase;
+      color: #252525;
+      font-size: 1.285714286em;
+      border: 2px solid #e8e4d9;
+      border-radius: 30px;
+      float: right;
+      margin-top: 30px; }
+    
+    #organic-contact .phone {
+      margin-top: 20px;
+      padding-top: 50px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #e8e4d9; 
+	  }
+    
+    #organic-contact .career {
+      margin-top: 30px;
+      padding-bottom: 60px;
+      }
+      
+      #organic-contact .career a {
+        color: #6d8e01;
+        font-size: 1.285714286em; }
+      
+      #organic-contact .career .text-career {
+        width: 45%; }
+      
+      #organic-contact .career .title {
+        line-height: 24px; }
+    
+    #organic-contact .text-phone .title {
+      color: #252525; }
+      
+      #organic-contact .text-phone .title .phone-number {
+        color: #6d8e01; }
+    
+    #organic-contact .text-phone .link {
+      font-size: 1.285714286em; }
+    
+    #organic-contact .title-phone {
+      font-size: 1.714285714em;
+      color: #252525;
+      position: relative;
+      padding-bottom: 35px; }
+      
+      #organic-contact .title-phone:before {
+        content: '';
+        position: absolute;
+        height: 25px;
+        width: 65px;
+        left: 0;
+        top: 30px;
+        border-bottom: 2px solid #6e6e6e; }
+    
+    #organic-contact .organic-social {
+      padding: 0;
+      margin-top: 15px; }
+      
+      #organic-contact .organic-social li {
+        float: left;
+        list-style: none;
+        padding-right: 20px; }
+        
+        #organic-contact .organic-social li i {
+          font-size: 0.785714286em;
+          color: #252525; }
+          
+          #organic-contact .organic-social li i.facebook :after {
+            content: "\f09a";
+            color: blue; }
+			
+.contact-block{
+	width:50%;
+	margin:0 auto;
+}
+
+/**about us**/
+#organic-store-about-us {
+    margin-top: 255px;
+    margin-bottom: 110px; }
+    @media only screen and (max-width: 767px) {
+      #organic-store-about-us {
+        margin-top: 75px;
+        margin-bottom: 50px; } }
+    
+    #organic-store-about-us .title-store {
+      font-size: 3.428571429em;
+      z-index: 1;
+      color: #95a83f;
+      letter-spacing: 10px;
+      text-transform: uppercase;
+      font-family: 'Playfair Display Bold';
+      position: absolute;
+      left: 50%;
+      right: auto;
+      -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      margin-top: -40px; }
+      
+      #organic-store-about-us .title-store:after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        width: 110px;
+        border: 1px solid #252525;
+        left: 50px; }
+    
+    #organic-store-about-us .store-right {
+      margin: 50px 70px; }
+      @media only screen and (max-width: 767px) {
+        #organic-store-about-us .store-right {
+          margin: 50px 20px 20px 55px; } }
+      
+      #organic-store-about-us .store-right .title-text {
+        font-size: 2.142857143em;
+        color: #252525;
+        line-height: 36px;
+        margin-bottom: 20px;
+        position: relative; }
+        @media only screen and (max-width: 767px) {
+          #organic-store-about-us .store-right .title-text {
+            font-size: 1.7em; } }
+        
+        #organic-store-about-us .store-right .title-text:before {
+          content: '';
+          position: absolute;
+          height: 40px;
+          width: 45px;
+          background: url('../img/common/icon-organic.png') no-repeat -300px -102px;
+          top: 5px;
+          left: -50px; }
+    
+    #organic-store-about-us .content {
+      color: #787c7f;
+      line-height: 24px;
+      padding-left: 20px; }
+      
+      #organic-store-about-us .content .name {
+        position: relative; }
+        
+        #organic-store-about-us .content .name:before {
+          content: '\f015';
+          font-family: FontAwesome;
+          position: absolute;
+          color: #252525;
+          height: 25px;
+          width: 30px;
+          left: -20px; }
+      
+      #organic-store-about-us .content .phone {
+        position: relative; }
+        
+        #organic-store-about-us .content .phone:before {
+          content: '\f095';
+          font-family: FontAwesome;
+          position: absolute;
+          color: #252525;
+          height: 25px;
+          width: 30px;
+          left: -20px; }
+      
+      #organic-store-about-us .content .email {
+        position: relative; }
+        
+        #organic-store-about-us .content .email:before {
+          content: '\f0e0';
+          font-family: FontAwesome;
+          position: absolute;
+          color: #252525;
+          height: 25px;
+          width: 30px;
+          left: -20px; }
+      
+      #organic-store-about-us .content .address {
+        position: relative; }
+        
+        #organic-store-about-us .content .address:before {
+          content: '\f041';
+          font-family: FontAwesome;
+          position: absolute;
+          color: #252525;
+          height: 25px;
+          width: 30px;
+          left: -20px; }
+    
+    #organic-store-about-us .store-left {
+      margin: 50px 70px; }
+      @media only screen and (max-width: 767px) {
+        #organic-store-about-us .store-left {
+          margin: 10px 20px; } }
+      
+      #organic-store-about-us .store-left:before {
+        content: '';
+        position: absolute;
+        height: 86%;
+        width: 45px;
+        border-left: 1px solid #e8e4d9;
+        top: 50px;
+        left: 0; }
+      
+      #organic-store-about-us .store-left .avatar-scroll {
+        margin-top: 20px;
+        padding-left: 20px; }
+        
+        #organic-store-about-us .store-left .avatar-scroll .avatar-left img {
+          border-radius: 10px;
+          float: left;
+          margin-right: 20px; }
+        
+        #organic-store-about-us .store-left .avatar-scroll .avatar-right {
+          padding-top: 10px; }
+          
+          #organic-store-about-us .store-left .avatar-scroll .avatar-right .name-auther {
+            color: #95a83f;
+            text-transform: uppercase;
+            font-size: 1.142857143em; }
+          
+          #organic-store-about-us .store-left .avatar-scroll .avatar-right .job-auther {
+            color: #b3b3b3;
+            font-size: 0.857142857em; }
+    
+    #organic-store-about-us .subscribe {
+      background: #6d8e01;
+      color: #fff;
+      font-size: 1.428571429em;
+      line-height: 36px;
+      text-transform: uppercase;
+      padding: 9px 62px;
+      border: none;
+      border-radius: 30px;
+      margin-top: 10px;
+      position: relative;
+      margin-left: -10%; }
+/*------------------------------------------------------------------
+[8. About us]
+*/
+  #organic-about-us {
+    margin-top: 16%;
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      #organic-about-us {
+        margin-top: 0; } }
+    @media only screen and (min-width: 1170px) {
+      #organic-about-us .vc_row {
+        overflow: visible; } }
+    @media only screen and (min-width: 1170px) {
+      #organic-about-us .vc_column_container {
+        overflow: visible; } }
+    
+    #organic-about-us .title-about-us {
+      font-size: 3.428571429em;
+      word-break: break-all;
+      text-transform: uppercase;
+      color: #95a83f;
+      width: 100px;
+      float: left;
+      padding-top: 4%;
+      margin-left: 16%;
+      letter-spacing: 10px; }
+      @media only screen and (max-width: 769px) {
+        #organic-about-us .title-about-us {
+          margin-left: 6%; } }
+      @media only screen and (max-width: 767px) {
+        #organic-about-us .title-about-us {
+          width: inherit;
+          letter-spacing: 1px; } }
+      
+      #organic-about-us .title-about-us span {
+        letter-spacing: 1px; }
+    
+    #organic-about-us .image-bg-about-us {
+      z-index: -1; }
+      @media only screen and (max-width: 767px) {
+        #organic-about-us .image-bg-about-us {
+          display: none; } }
+      
+      #organic-about-us .image-bg-about-us .img-01 {
+        position: absolute;
+        top: -11%;
+        right: 1%;
+        z-index: -1;
+        width: 400px;
+        height: 322px;
+        overflow: hidden; }
+        
+        #organic-about-us .image-bg-about-us .img-01 img {
+          position: absolute;
+          left: 50%;
+          right: auto;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+      
+      #organic-about-us .image-bg-about-us .img-02 {
+        position: absolute;
+        top: 6%;
+        right: -8%;
+        z-index: -1;
+        width: 400px;
+        height: 322px;
+        overflow: hidden; }
+        
+        #organic-about-us .image-bg-about-us .img-02 img {
+          position: absolute;
+          left: 50%;
+          right: auto;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+      
+      #organic-about-us .image-bg-about-us .img-03 {
+        position: absolute;
+        top: 30%;
+        left: 7%;
+        z-index: -1;
+        width: 400px;
+        height: 322px;
+        overflow: hidden; }
+        
+        #organic-about-us .image-bg-about-us .img-03 img {
+          position: absolute;
+          left: 50%;
+          right: auto;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+      
+      #organic-about-us .image-bg-about-us .img-04 {
+        position: absolute;
+        top: 45%;
+        left: 15%;
+        z-index: -2;
+        width: 400px;
+        height: 322px;
+        overflow: hidden; }
+        
+        #organic-about-us .image-bg-about-us .img-04 img {
+          position: absolute;
+          left: 50%;
+          right: auto;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%); }
+    
+    #organic-about-us .content-about-us {
+      width: 52%;
+      background: #fff;
+      padding: 60px 100px 100px 100px;
+      margin-left: 30%; }
+      @media only screen and (max-width: 769px) {
+        #organic-about-us .content-about-us {
+          width: 71%;
+          padding: 60px 50px 50px 50px;
+          margin-left: 20%; } }
+      @media only screen and (max-width: 767px) {
+        #organic-about-us .content-about-us {
+          width: 100%;
+          padding: 15px;
+          margin-left: 0;
+          clear: both; } }
+      
+      #organic-about-us .content-about-us .text-title-about-us {
+        color: #252525;
+        text-transform: uppercase;
+        font-size: 1.714285714em;
+        font-family: 'Playfair Display Bold';
+        margin-bottom: 30px; }
+      
+      #organic-about-us .content-about-us .content {
+        color: #898989;
+        line-height: 24px; }
+        
+        #organic-about-us .content-about-us .content:first-letter {
+          font-size: 5.142857143em;
+          color: #252525;
+          margin-left: -10px;
+          padding-right: 10px;
+          float: left;
+          margin-top: -20px;
+          margin-bottom: -10px;
+          line-height: 100px; }
+        
+        #organic-about-us .content-about-us .content a {
+          color: #95a83f; }
 /*------------------------------------------------------------------
 [10. Footer]
 */
