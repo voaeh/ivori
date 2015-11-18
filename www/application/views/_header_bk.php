@@ -121,12 +121,13 @@
                             <li>
                                 <a href="#"><i class="fa fa-edit fa-fw"></i> Forms<span class="fa arrow"></span></a>
 								<ul class="nav nav-second-level">
-                                    <li>
-                                        <a href="<?php echo site_url('admin_product'); ?>">Add Product</a>
+									<li>
+                                        <a href="<?php echo site_url('admin_product/index'); ?>">Product List</a>
                                     </li>
                                     <li>
-                                        <a href="buttons.html">Buttons</a>
+                                        <a href="<?php echo site_url('admin_product/register'); ?>">Add Product</a>
                                     </li>
+                            
                                     <li>
                                         <a href="notifications.html">Notifications</a>
                                     </li>

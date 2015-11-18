@@ -28,10 +28,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `dtb_product` (
   `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
+  `product_name_en` varchar(255) NOT NULL,
+  `product_name_th` varchar(255) NOT NULL,
   `product_code` varchar(255) DEFAULT NULL,
-  `short_detail` text,
-  `long_detail` text,
+  `short_detail_en` text,
+  `short_detail_th` text,
+  `long_detail_en` text,
+  `long_detail_th` text,
   `quantity` int(11) NOT NULL,
   `main_image` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
