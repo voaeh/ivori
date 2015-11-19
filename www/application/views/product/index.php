@@ -1,3 +1,4 @@
+<?php $lang = get_lang(); ?>
 <div class="clear height-40"></div>
 
 <div class="product-line-full"></div>
@@ -11,6 +12,8 @@
 <article id="organic-detail">
 	<div class="container">
 	<div id="container">
+	
+	<?php if (isset($product)) { ?>
 	<div id="content" role="main">
 
 	<div itemscope="" itemtype="http://schema.org/Product" id="product-1515" class="post-1515 product type-product status-publish has-post-thumbnail product_cat-butchers product_cat-fresh-noodle-tofe product_cat-frozen product_cat-greens product_cat-pantry product_cat-small-goods shipping-taxable purchasable product-type-simple product-cat-butchers product-cat-fresh-noodle-tofe product-cat-frozen product-cat-greens product-cat-pantry product-cat-small-goods instock">
@@ -19,7 +22,7 @@
 		<div class="images">
 			<div class="img-big">
 				<a href="<?php echo base_url('public/img/product/58.jpg');?>" itemprop="image" class="woocommerce-main-image zoom" title="" data-rel="prettyPhoto">
-				<img width="600" height="600" src="<?php echo base_url('public/img/product/58.jpg');?>" class="attachment-shop_single wp-post-image"></a>	
+				<img width="600" height="600" src="<?php echo base_url('public/img/product/'.$product->product_id.'/'.$product->main_image); ?>" class="attachment-shop_single wp-post-image"></a>	
 			</div>
 	
 		</div>
@@ -41,22 +44,20 @@
 	
 			</div>
 			
-		<h1 itemprop="name" class="product_title entry-title name-detail">Sample Shampoo</h1>
+		<h1 itemprop="name" class="product_title entry-title name-detail"><?php $product_name_en = 'product_name_'.$lang; echo $product->$product_name_en; ?></h1>
 		<div class="border-description">
 			<div itemprop="description" class="description-detail">
-				<p>สินค้าตัวนี้ทดลอง แบบสั้น</p>
+				<p><?php $short_detail = 'short_detail_'.$lang; echo $product->$short_detail; ?></p>
 			</div>
 		</div>
 
 
-		<div class="price-detail"><span class="amount">450 Baht</span></div>
+		<div class="price-detail"><span class="amount"><?php echo $product->price ?> Baht</span></div>
 		<form class="cart" method="post" enctype="multipart/form-data">
 	 		<div class="content-detail"></div>
 			<span>Quantity</span>
 		<div class="quantity"><input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"></div>
 		
-	 	<input type="hidden" name="add-to-cart" value="1515">
-
 	 	<button type="submit" class="single_add_to_cart_button button alt">add to basket</button>
 	 	
 
@@ -72,7 +73,7 @@
 
 </div><!-- #product-1515 -->
 
-
+	<?php } ?>
 				
 	</div>
 	</div>

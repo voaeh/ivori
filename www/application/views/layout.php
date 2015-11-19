@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="<?php echo base_url('public/css/style.css');?>">
   <link rel="stylesheet" media="(min-width:768px)" href="<?php echo base_url('public/css/common.css');?>">
   <link rel="stylesheet" media="(max-width:767px)" href="<?php echo base_url('public/css/common-sm.css');?>">
+  <link rel="stylesheet" media="(max-width:767px)" href="<?php echo base_url('public/css/meanmenu.css');?>" />
   <link rel="stylesheet" href="<?php echo base_url('public/css/woocommerce.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/select2.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/slick.css');?>">
@@ -15,6 +16,7 @@
   <link rel="stylesheet" href="<?php echo base_url('public/css/font-awesome.min.css');?>">
   <link rel="stylesheet" href="<?php echo base_url('public/css/'.$this->session->userdata('lang').'.css');?>">
   <script type="text/javascript" src="<?php echo base_url('public/js/jquery-1.11.1.min.js');?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('public/js/jquery.meanmenu.js');?>"></script>
 </head>
 <body>
   <div id="wrap">
@@ -42,6 +44,7 @@
 	
   </div>
   
+  <input type="hidden" id="home_url" value="<?php echo site_url('top') ?>" />
   <script type="text/javascript" src="<?php echo base_url('public/js/slick.min.js');?>"></script>
   <script type="text/javascript" src="<?php echo base_url('public/js/common.js');?>"></script>
 </body>

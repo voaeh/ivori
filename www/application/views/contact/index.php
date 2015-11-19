@@ -2,6 +2,8 @@
 <div class="row">
 <div class="contact-block">
 	<div>
+		   <div class="clear height-sp-40"></div>
+		   <div class="account-title">Contact</div>
            <div class="title-small-contact">want to work with Us?</div>
            <div class="title-contact">get in touch</div>
            <div class="desciption-contact">we work with Starups and leading brands to build and refine their products. our engagements typically start at a minimum of two months and involve a team of 5-20 pepple.</div>

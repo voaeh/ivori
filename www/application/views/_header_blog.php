@@ -1,3 +1,4 @@
+
 <article id="organic-header-grid">
             <div class="row">
                 <div class="fix-cover">
@@ -17,9 +18,10 @@
                 </div>
             </div>
         </article>
+
 <div id="header-blog">
 	<div class="header-left">
-		<img src="<?php echo base_url('public/img/common/logo.png');?>" />
+		<img id="logo" src="<?php echo base_url('public/img/common/logo.png');?>" />
 	</div>
 	<div class="header-right">
 		<ul id="menu-pc">
@@ -58,6 +60,7 @@
 					<li>
 						<a href="https://localhost/wordpress/my-account/" title="My Account">My Account</a>
 					</li>
+					<div class="clear"></div>
 					<div class="form-login">
 						<li class="poup-login active">
 							<a href="#">Log in</a>
@@ -99,4 +102,30 @@
 	</div>
 </div>
 
-<div class="clear"></div>
+<div id="menu-sp">
+	  <nav>
+	  <ul>
+		<li>
+			<a href="<?php echo site_url('top')?>">HOME</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('shop'); ?>">SHOP</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('blog'); ?>">BLOG</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('myaccount'); ?>">MY ACCOUNT</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('myaccount'); ?>">CART</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('contact'); ?>">CONTACT</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('about'); ?>">ABOUT US</a>
+		</li>
+	  </ul>
+	  </nav>
+</div>

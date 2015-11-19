@@ -1,4 +1,4 @@
-<div class="clear height-50"></div>
+<div class="clear height-pc-50"></div>
 
 <article id="organic-content-grid" class="blog-left">
     <div class="container">
@@ -72,51 +72,85 @@
 	
 	
 	<div id="order_review" class="woocommerce-checkout-review-order">
-		<table class="shop_table woocommerce-checkout-review-order-table">
-	<thead>
+		<table id="cart-table-pc" class="shop_table woocommerce-checkout-review-order-table">
+		<thead>
+			<tr>
+				<th class="product-name">Product</th>
+				<th class="product-price">Price</th>
+				<th class="product-quatity">Quantity</th>
+				<th class="product-total">Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="cart_item">
+				<td class="product-name">
+					<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" class="attachment-shop_thumbnail wp-post-image" alt="58">	
+					Sample Shampoo						
+				</td>
+				<td>
+					<span class="amount">450 Baht</span>						
+				</td>
+				<td>
+					<strong class="product-quantity" style="padding-left:50px;">1</strong>						
+				</td>
+				<td class="product-total">
+					<span class="amount">450 Baht</span>						
+				</td>
+			</tr>
+		</tbody>
+		<tfoot>
+		<tr class="cart-subtotal">
+			<td></td>
+			<td></td>
+			<th style="padding-left:50px;">Subtotal</th>
+			<td><span class="amount">450 Baht</span></td>
+		</tr>
+		<tr class="order-total">
+			<td></td>
+			<td></td>
+			<th style="padding-left:50px;">Total</th>
+			<td><strong><span class="amount">450 Baht</span></strong> </td>
+		</tr>
+	</tfoot>
+	</table>
+	
+	<table id="cart-table-sp" class="shop_table">
 		<tr>
 			<th class="product-name">Product</th>
-			<th class="product-price">Price</th>
-			<th class="product-quatity">Quatity</th>
-			<th class="product-total">Total</th>
 		</tr>
-	</thead>
-	<tbody>
-		<tr class="cart_item">
-			<td class="product-name">
-				<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" class="attachment-shop_thumbnail wp-post-image" alt="58">	
-							Sample Shampoo<br>&nbsp;							
+		<tr>
+			<td>
+				<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" alt="58"><br>
+				Sample Shampoo							
 			</td>
+		</tr>
+		<tr>	
+			<th class="product-price">Price</th>
+		</tr>
+		<tr class="cart_item">
 			<td>
 				<span class="amount">450 Baht</span>						
 			</td>
+		</tr>
+		<tr>
+			<th class="product-quatity">Quantity</th>
+		</tr>
+		<tr class="cart_item">
 			<td>
 				<strong class="product-quantity">1</strong>						
 			</td>
+		</tr>
+		<tr>
+			<td class="product-total">
+				<span class="amount">Total</span>						
+			</td>
+		</tr>
+		<tr class="cart_item">
 			<td class="product-total">
 				<span class="amount">450 Baht</span>						
 			</td>
 		</tr>
-	</tbody>
-	<tfoot>
-
-		<tr class="cart-subtotal">
-			<td></td>
-			<td></td>
-			<th>Subtotal</th>
-			<td><span class="amount">450 Baht</span></td>
-		</tr>
-
-		<tr class="order-total">
-			<td></td>
-			<td></td>
-			<th>Total</th>
-			<td><strong><span class="amount">450 Baht</span></strong> </td>
-		</tr>
-
-	</tfoot>
-</table>
-	
+	</table>
 
 
 <div id="payment" class="woocommerce-checkout">

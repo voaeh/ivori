@@ -1,4 +1,4 @@
-<div class="clear height-50"></div>
+<div class="clear height-pc-50"></div>
 
 <article id="organic-content-grid" class="blog-left">
     <div class="container">
@@ -9,8 +9,10 @@
 		
 <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 <div id="content-blog-full">
-                  
-				  
+         
+<div class="account-title">Blog</div>
+<div class="height-sp-20"></div>
+				
 <article class="post type-post status-publish format-standard hentry category-blog">
 <div class="entry-thumbnail">
         <div class="entry-thumbnail">

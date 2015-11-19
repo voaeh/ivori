@@ -14,6 +14,10 @@ a, a:hover, a:active, a:focus{
     outline: none;
 	border: none; 
 }
+.es_msg{
+	color:red;
+	text-align:left;
+}
 .clear{
 	clear:both;
 }
@@ -57,6 +61,9 @@ a, a:hover, a:active, a:focus{
 }
 .top-30{
 	margin-top:30px;
+}
+.top-40{
+	margin-top:40px;
 }
 .top-50{
 	margin-top:50px;
@@ -228,6 +235,7 @@ a, a:hover, a:active, a:focus{
       float: right;
       padding-right: 11%;
       margin-top: 30px;
+	  text-align:right;
       width: 100%; }
       
       #menu-cart .menu-right .main-menu-right ul {
@@ -2643,15 +2651,7 @@ ul#recentcoments .date{color:#CCC;font-size:12px;font-style:italic}.circle{borde
 .col2-set{
 	width:100%;
 }
-.col-1{
-	float: left;
-    width: 48%;
-	border-right:1px solid #E8E4D9;
-}
-.col-2{
-	float: right;
-    width: 48%;
-}
+
 #customer_login form input.input-text {
     width: 90%;
     padding-left: 20px;
@@ -3294,6 +3294,9 @@ ul#recentcoments .date{color:#CCC;font-size:12px;font-style:italic}.circle{borde
       color: #252525;
       text-transform: capitalize;
       padding-top: 100px; }
+	   @media only screen and (max-width: 767px) {
+        #organic-contact .title-small-contact {
+          padding-top: 20px; } }
     
     #organic-contact .title-contact {
       font-size: 2.857142857em;
@@ -3392,11 +3395,6 @@ ul#recentcoments .date{color:#CCC;font-size:12px;font-style:italic}.circle{borde
           #organic-contact .organic-social li i.facebook :after {
             content: "\f09a";
             color: blue; }
-			
-.contact-block{
-	width:50%;
-	margin:0 auto;
-}
 
 /**about us**/
 #organic-store-about-us {

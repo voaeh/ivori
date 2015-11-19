@@ -16,3 +16,28 @@
 #product-list{
 	display:none;
 }
+.col-1{
+	float: left;
+    width: 48%;
+	border-right:1px solid #E8E4D9;
+}
+.col-2{
+	float: right;
+    width: 48%;
+}
+.account-title{
+	display:none;
+}
+#menu-sp,#cart-table-sp{
+	display:none;
+}
+.sp-logo{
+	display:none;
+}
+.height-pc-50{
+	height:50px;
+}
+.contact-block{
+	width:50%;
+	margin:0 auto;
+}

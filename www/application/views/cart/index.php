@@ -1,4 +1,4 @@
-<div class="clear height-50"></div>
+<div class="clear height-pc-50"></div>
 
 <article id="organic-content-grid" class="blog-left">
     <div class="container">
@@ -16,7 +16,7 @@
 		<form action="http://localhost/wordpress/cart/" method="post">
 
 		<div class="title-order">Your Order</div>
-		<table class="shop_table cart" cellspacing="0">
+		<table id="cart-table-pc" class="shop_table cart" cellspacing="0">
 			<thead>
 				<tr>
 					<th class="product-thumbnail">&nbsp;</th>
@@ -56,7 +56,65 @@
 				</tr>
 
 			</tbody>
-</table>
+	</table>
+	
+	<table id="cart-table-sp" class="shop_table cart" cellspacing="0">
+				<tr>
+					<th class="product-thumbnail">&nbsp;</th>
+				</tr>
+				<tr class="cart_item">
+					<td class="product-remove">
+						<a href="" class="remove" title="Remove this item">×</a>
+					</td>
+				</tr>
+				<tr>
+					<th class="product-name">Product</th>
+				</tr>
+				<tr>
+					<td class="product-thumbnail">
+						<a href="http://localhost/wordpress/product/sample-shampoo/">
+							<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" class="attachment-shop_thumbnail wp-post-image" alt="58"></a>					
+					</td>
+				</tr>
+				<tr>
+					<th class="product-remove">&nbsp;</th>
+				</tr>
+				<tr>
+					<td class="product-name">
+						<a href="http://localhost/wordpress/product/sample-shampoo/">Sample Shampoo </a><br>					
+					</td>
+				</tr>
+				<tr>
+					<th class="product-price">Price</th>
+				</tr>
+				<tr>
+					<td class="product-price">
+						<span class="amount">450 Baht</span>					
+					</td>
+				</tr>
+				<tr>
+					<th class="product-quantity">Quantity</th>
+				</tr>
+				<tr>
+					<td class="product-quantity">
+						<div class="quantity">
+							<input type="number" step="1" min="0" name="cart[bc7316929fe1545bf0b98d114ee3ecb8][qty]" value="1" title="Qty" class="input-text qty text" size="4"></div>
+					</td>
+				</tr>
+				<tr>
+					<th class="product-subtotal">Total</th>
+				</tr>
+				<tr>	
+					<td class="product-subtotal">
+						<span class="amount">450 Baht</span>					
+					</td>
+				</tr>
+				<tr>
+					<td colspan="6" class="actions right">
+						<input type="submit" class="button" name="update_cart" value="Update Cart">
+					</td>
+				</tr>
+	</table>
 
 
 </form>
@@ -88,7 +146,7 @@
 </div>
 
 </div>
-                                            </div><!-- .entry-content -->
+</div><!-- .entry-content -->
 
                     <footer class="entry-meta">
                                             </footer><!-- .entry-meta -->

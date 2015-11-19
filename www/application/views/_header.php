@@ -1,5 +1,5 @@
 <div class="header-left">
-	<img src="<?php echo base_url('public/img/common/logo.png');?>" />
+	<img id="logo" src="<?php echo base_url('public/img/common/logo.png');?>" />
 </div>
 <div class="header-right">
 	<ul id="menu-pc">
@@ -76,4 +76,32 @@
 				</div>
 		</div>
 	</div>
+</div>
+
+<div id="menu-sp">
+	  <nav>
+	  <ul>
+		<li>
+			<a href="<?php echo site_url('top')?>">HOME</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('shop'); ?>">SHOP</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('blog'); ?>">BLOG</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('myaccount'); ?>">MY ACCOUNT</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('myaccount'); ?>">CART</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('contact'); ?>">CONTACT</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('about'); ?>">ABOUT US</a>
+		</li>
+	  </ul>
+	  </nav>
 </div>

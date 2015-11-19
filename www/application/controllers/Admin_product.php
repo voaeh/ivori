@@ -14,6 +14,19 @@ class Admin_product extends CI_Controller {
 	
 	public function index()
 	{
+		$params = $this->input->post();
+		
+		$databaseParams = array();
+		
+		if (isset($params['product_name']))
+		{
+			$databaseParams = $params['product_name'];
+		}
+		
+		$productList = $this->Productmodel->searchByParams($databaseParams);
+		
+		$data['productList'] = $productList;
+		
 		$data['content'] = 'admin_product/index';
 		$this->load->view('layout_bk', $data);
 	}
@@ -24,9 +37,21 @@ class Admin_product extends CI_Controller {
 		
 		if($params)
 		{
+			if (isset($params['mode']) && $params['mode'] == 'edit')
+			{
+				$databaseParams = array(); 
+				$databaseParams['product_id'] = $params['product_id'];
+				$productList = $this->Productmodel->searchByParams($databaseParams);
+				
+				$productList = reset($productList);
+				
+				$data['arrForm'] = (array) $productList;
+			}
+			else
+			{
 			$arrErr = array();
 			
-			$this->form_validation->set_error_delimiters('<div class="red">', '</div>');
+			$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
 			
 			$this->form_validation->set_message('required', ' %s required.');
 			$this->form_validation->set_message('max_length', '%s must not exceed 255 characters.');
@@ -38,18 +63,21 @@ class Admin_product extends CI_Controller {
 			$this->form_validation->set_rules('price', 'Price', 'required|numeric');
 			$this->form_validation->set_rules('quantity', 'Quantity', 'required|numeric');
 
-			if (empty($_FILES['main_image']['name']))
+			if ($params['h_main_image'] == '')
 			{
-				$arrErr['main_image'] = 'Main Image not found.' ;
-			}
-			else
-			{
-				$a = getimagesize($_FILES['main_image']['tmp_name']);
-				$image_type = $a[2];
-
-				if(!in_array($image_type , array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP)))
+				if (empty($_FILES['main_image']['name']))
 				{
-					$arrErr['main_image'] = 'Main Image type must be .gif, .jpg, .png, .bmp' ;
+					$arrErr['main_image'] = 'Main Image not found.' ;
+				}
+				else
+				{
+					$a = getimagesize($_FILES['main_image']['tmp_name']);
+					$image_type = $a[2];
+
+					if(!in_array($image_type , array(IMAGETYPE_GIF , IMAGETYPE_JPEG ,IMAGETYPE_PNG , IMAGETYPE_BMP)))
+					{
+						$arrErr['main_image'] = 'Main Image type must be .gif, .jpg, .png, .bmp' ;
+					}
 				}
 			}
 			
@@ -68,32 +96,49 @@ class Admin_product extends CI_Controller {
 				$databaseParams['discount'] = (isset($params['discount']))? $params['discount']:'';
 				$databaseParams['create_date'] = date('Y-m-d');
 				
-				$extData = explode('.', $_FILES['main_image']['name']);
-				$extIndex = count($extData) - 1;
-				$new_name = time().rand(1,1000).'.'.$extData[$extIndex];
-				
-				$databaseParams['main_image'] = $new_name;
-				
-				$product_id = $this->Productmodel->insertProduct($databaseParams);
-				
-				$target_folder = APPPATH.'../public/img/product/'.$product_id;
-				
-				if (!file_exists($target_folder))
+				if ($params['h_main_image'] == '')
 				{
-					mkdir($target_folder);
+					$extData = explode('.', $_FILES['main_image']['name']);
+					$extIndex = count($extData) - 1;
+					$new_name = time().rand(1,1000).'.'.$extData[$extIndex];
+					
+					$databaseParams['main_image'] = $new_name;
 				}
 				
-				$target_file = APPPATH.'../public/img/product/'.$product_id.'/'.$new_name;
+				if (!isset($params['product_id']) && $params['product_id'] != '')
+				{				
+					$product_id = $this->Productmodel->insertProduct($databaseParams);
+				}
+				else
+				{
+					$databaseParams['update_date'] = date('Y-m-d');
+					$result = $this->Productmodel->updateProduct($params['product_id'], $databaseParams);
+					$product_id = $params['product_id'];
+				}
 				
-				move_uploaded_file($_FILES['main_image']['tmp_name'], $target_file);
+				if ($params['h_main_image'] == '')
+				{
+					$target_folder = APPPATH.'../public/img/product/'.$product_id;
+					
+					if (!file_exists($target_folder))
+					{
+						mkdir($target_folder);
+					}
+					
+					$target_file = APPPATH.'../public/img/product/'.$product_id.'/'.$new_name;
+					
+					move_uploaded_file($_FILES['main_image']['tmp_name'], $target_file);
+				}
 				
 				$data['success'] = 'Add Product Completed.';
 				
 			 }
 			 else
 			 {
+				 $data['arrForm'] = $params;
 				 $data['arrErr'] = $arrErr;
 			 }
+			}
 	  
 		}
 		

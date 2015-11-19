@@ -59,6 +59,8 @@ $(this).ready(function(){
 		// instead of a settings object
 	  ]
 	});
+	
+	$('#menu-sp nav').meanmenu();
 });
 
 $( window ).resize(function() {
