@@ -1,3 +1,5 @@
+<script>
+</script>
 <div class="clear height-pc-50"></div>
 
 <article id="organic-content-grid">
@@ -17,15 +19,23 @@
 		<div class="login-page">
 			<h2>Login</h2>
 
-			<form method="post" class="login">
+			<form method="post" class="login" action="<?php echo site_url('myaccount/index') ?>">
 
-				
+				<input type="hidden" name="mode" value="login" />
+				<?php if (isset($arrErr2)) { ?>
+				<?php foreach ($arrErr2 as $val) { ?>
+				<div class="red">
+					<?php echo $val ?>
+				</div>
+				<?php } } ?>
 				<p class="form-row form-row-wide top-30">
-					<label for="username">Username or email address <span class="required">*</span></label>
-					<input type="text" class="input-text" name="username" id="username" value="">
+					<label for="username">Email address<span class="required">*</span></label>
+					<?php echo form_error('username'); ?>
+					<input type="email" class="input-text" name="username" id="username" value="">
 				</p>
 				<p class="form-row form-row-wide">
 					<label for="password">Password <span class="required">*</span></label>
+					<?php echo form_error('password'); ?>
 					<input class="input-text" type="password" name="password" id="password">
 				</p>
 
@@ -38,7 +48,7 @@
 					</label>
 				</p>
 				<p class="lost_password">
-					<a href="https://localhost/wordpress/my-account/lost-password/">Lost your password?</a>
+					<a href="<?php echo site_url('myaccount/lost_password'); ?>">Lost your password?</a>
 				</p>
 
 				
@@ -52,19 +62,27 @@
 
 		<h2>Register</h2>
 
-		<form method="post" class="register">
+		<form method="post" class="register" action="<?php echo site_url('myaccount/index') ?>">
 
+			<input type="hidden" name="mode" value="register" />
 			
-			
+			<?php if (isset($arrErr)) { ?>
+				<?php foreach ($arrErr as $val) { ?>
+				<div class="red">
+					<?php echo $val ?>
+				</div>
+				<?php } } ?>
 			<p class="form-row form-row-wide top-30">
 				<label for="reg_email">Email address <span class="required">*</span></label>
-				<input type="email" class="input-text" name="email" id="reg_email" value="">
+				<?php echo form_error('reg_email'); ?>
+				<input type="email" class="input-text" name="reg_email" id="reg_email" value="">
 			</p>
 
 			
 				<p class="form-row form-row-wide">
 					<label for="reg_password">Password <span class="required">*</span></label>
-					<input type="password" class="input-text" name="password" id="reg_password">
+					<?php echo form_error('reg_password'); ?>
+					<input type="password" class="input-text" name="reg_password" id="reg_password">
 				</p>
 
 						

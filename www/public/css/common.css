@@ -41,3 +41,14 @@
 	width:50%;
 	margin:0 auto;
 }
+.account-table{
+	width:100%;
+}
+
+.account-table .a-left{
+	width:48%;
+}
+
+.account-table .a-right{
+	width:48%;
+}

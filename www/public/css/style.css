@@ -27,6 +27,12 @@ a, a:hover, a:active, a:focus{
 .img-25{
 	width:25%;
 }
+.red{
+	color:red;
+}
+.green{
+	color:#33CC00;
+}
 #wrap{
 	margin: 0 auto;
 	text-align:left;
@@ -73,6 +79,35 @@ a, a:hover, a:active, a:focus{
 }
 .right{
 	text-align:right;
+}
+.col-100{
+	width:100%;
+}
+.custom-button{
+    background: #95a83f;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	min-height: 40px;
+    border-radius: 40px;
+    border: 1px solid #c2c2c2;
+}
+.custom-button:hover{
+    background: #95a83f;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:10px;
+	padding-bottom:10px;
+	min-height: 40px;
+    border-radius: 40px;
+    border: 1px solid #c2c2c2;
 }
 #menu-pc{
 	list-style:none;
