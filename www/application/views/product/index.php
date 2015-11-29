@@ -56,9 +56,9 @@
 		<form class="cart" method="post" enctype="multipart/form-data">
 	 		<div class="content-detail"></div>
 			<span>Quantity</span>
-		<div class="quantity"><input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"></div>
+		<div class="quantity"><input type="number" step="1" min="1" id="quantity" name="quantity" value="1" title="Qty" class="input-text qty text" size="4"></div>
 		
-	 	<button type="submit" class="single_add_to_cart_button button alt">add to basket</button>
+	 	<button type="button" class="single_add_to_cart_button button alt" onclick="addToCart('<?php echo $product->product_id ?>','0')">add to basket</button>
 	 	
 
 		</form>

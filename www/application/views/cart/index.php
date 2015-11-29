@@ -1,3 +1,17 @@
+<script>
+	function formSubmit(mode)
+	{
+		$("#mode").val(mode);
+		$("#form1").submit();
+	}
+	
+	function deleteCart(product_id)
+	{
+		$("#mode").val('deleteCart');
+		$("#product_id").val(product_id);
+		$("#form1").submit();
+	}
+</script>
 <div class="clear height-pc-50"></div>
 
 <article id="organic-content-grid" class="blog-left">
@@ -13,9 +27,17 @@
 <article id="post-7" class="post-7 page type-page status-publish hentry">
 <div class="entry-content">
     <div class="woocommerce">
-		<form action="http://localhost/wordpress/cart/" method="post">
-
+		<form id="form1" action="<?php echo site_url("cart/updateCart"); ?>" method="post">
+		<input type="hidden" name="mode" id="mode" />
+		<input type="hidden" name="product_id" id="product_id" />
 		<div class="title-order">Your Order</div>
+		
+		<?php if (!isset($cart)) { ?>
+		
+		<div>Your Cart Is Empty.</div>
+		
+		<?php } else { ?>
+		
 		<table id="cart-table-pc" class="shop_table cart" cellspacing="0">
 			<thead>
 				<tr>
@@ -28,30 +50,32 @@
 				</tr>
 			</thead>
 			<tbody>
+			<?php foreach ($cart as $val) { ?>
 				<tr class="cart_item">
 					<td class="product-remove">
-						<a href="" class="remove" title="Remove this item">×</a></td>
+						<a href="javascript:void(0)" onclick="deleteCart('<?php echo $val['product_id'] ?>')" class="remove" title="Remove this item">×</a></td>
 					<td class="product-thumbnail">
-						<a href="http://localhost/wordpress/product/sample-shampoo/">
-							<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" class="attachment-shop_thumbnail wp-post-image" alt="58"></a>					
+						<a href="">
+							<img width="180" height="180" src="<?php echo base_url('public/img/product/'.$val['product_id'].'/'.$val['main_image']);?>" class="attachment-shop_thumbnail wp-post-image"></a>					
 					</td>
 					<td class="product-name">
-						<a href="http://localhost/wordpress/product/sample-shampoo/">Sample Shampoo </a><br>					
+						<a href=""><?php echo $val['product_name'] ?></a><br>					
 					</td>
 					<td class="product-price">
-						<span class="amount">450 Baht</span>					
+						<span class="amount"><?php echo $val['price'] ?> Baht</span>					
 					</td>
 					<td class="product-quantity">
 						<div class="quantity">
-							<input type="number" step="1" min="0" name="cart[bc7316929fe1545bf0b98d114ee3ecb8][qty]" value="1" title="Qty" class="input-text qty text" size="4"></div>
+							<input type="number" step="1" min="0" name="quantity[<?php echo $val['product_id'] ?>]" value="<?php echo $val['quantity'] ?>" title="Qty" class="input-text qty text" size="4"></div>
 					</td>
 					<td class="product-subtotal">
-						<span class="amount">450 Baht</span>					
+						<span class="amount"><?php echo $val['subtotal'] ?> Baht</span>					
 					</td>
 				</tr>
+			<?php } ?>
 				<tr>
 					<td colspan="6" class="actions right">
-						<input type="submit" class="button" name="update_cart" value="Update Cart">
+						<input type="button" class="button" onclick="formSubmit('pc')" name="update_cart" value="Update Cart">
 					</td>
 				</tr>
 
@@ -59,65 +83,47 @@
 	</table>
 	
 	<table id="cart-table-sp" class="shop_table cart" cellspacing="0">
-				<tr>
-					<th class="product-thumbnail">&nbsp;</th>
-				</tr>
+			<?php foreach ($cart as $val) { ?>
 				<tr class="cart_item">
 					<td class="product-remove">
-						<a href="" class="remove" title="Remove this item">×</a>
+						<a href="javascript:void(0)" class="remove" title="Remove this item" onclick="deleteCart('<?php echo $val['product_id'] ?>')">×</a>
 					</td>
-				</tr>
-				<tr>
-					<th class="product-name">Product</th>
 				</tr>
 				<tr>
 					<td class="product-thumbnail">
 						<a href="http://localhost/wordpress/product/sample-shampoo/">
-							<img width="180" height="180" src="<?php echo base_url('public/img/product/57.jpg');?>" class="attachment-shop_thumbnail wp-post-image" alt="58"></a>					
+							<img width="180" height="180" src="<?php echo base_url('public/img/product/'.$val['product_id'].'/'.$val['main_image']);?>" class="attachment-shop_thumbnail wp-post-image" ></a>					
 					</td>
-				</tr>
-				<tr>
-					<th class="product-remove">&nbsp;</th>
 				</tr>
 				<tr>
 					<td class="product-name">
-						<a href="http://localhost/wordpress/product/sample-shampoo/">Sample Shampoo </a><br>					
+						<a href=""><?php echo $val['product_name'] ?></a><br>					
 					</td>
-				</tr>
-				<tr>
-					<th class="product-price">Price</th>
 				</tr>
 				<tr>
 					<td class="product-price">
-						<span class="amount">450 Baht</span>					
+						<span class="amount"><?php echo $val['price'] ?> Baht</span>					
 					</td>
-				</tr>
-				<tr>
-					<th class="product-quantity">Quantity</th>
 				</tr>
 				<tr>
 					<td class="product-quantity">
 						<div class="quantity">
-							<input type="number" step="1" min="0" name="cart[bc7316929fe1545bf0b98d114ee3ecb8][qty]" value="1" title="Qty" class="input-text qty text" size="4"></div>
+						quantity&nbsp;&nbsp;<input type="number" step="1" min="0" name="quantity2[<?php echo $val['product_id'] ?>]" value="<?php echo $val['quantity'] ?>" title="Qty" class="input-text qty text" size="4"></div>
 					</td>
-				</tr>
-				<tr>
-					<th class="product-subtotal">Total</th>
 				</tr>
 				<tr>	
 					<td class="product-subtotal">
-						<span class="amount">450 Baht</span>					
+						Total&nbsp;&nbsp;<span class="amount"><?php echo $val['subtotal'] ?> Baht</span>					
 					</td>
 				</tr>
+			<?php } ?>
 				<tr>
 					<td colspan="6" class="actions right">
-						<input type="submit" class="button" name="update_cart" value="Update Cart">
+						<input type="button" class="button" onclick="formSubmit('sp')" name="update_cart" value="Update Cart">
 					</td>
 				</tr>
 	</table>
 
-
-</form>
 
 <div class="cart-collaterals">
 	<div class="cart_totals ">
@@ -126,25 +132,26 @@
 	<table cellspacing="0" class="cart-table">
 		<tr class="cart-subtotal">
 			<th>Subtotal</th>
-			<td><span class="amount">450 Baht</span></td>
+			<td><span class="amount"><?php echo $total ?> Baht</span></td>
 		</tr>
 		<tr class="order-total">
 			<th>Total</th>
-			<td><strong><span class="amount">450 Baht</span></strong></td>
+			<td><strong><span class="amount"><?php echo $total ?> Baht</span></strong></td>
 		</tr>
 	</table>
 
 	
 	<div class="wc-proceed-to-checkout">
 
-		<a href="http://localhost/wordpress/checkout/" class="feature-button">Check Out</a>
+		<a href="<?php echo site_url("checkout") ?>" class="feature-button">Check Out</a>
 	</div>
 
 	
 </div>
 
 </div>
-
+</form>
+<?php } ?>
 </div>
 </div><!-- .entry-content -->
 

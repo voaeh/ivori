@@ -133,7 +133,7 @@
 			</tr>
 			<tr>
 				<td class="a-left">
-					<p class="form-row form-row form-row-first address-field validate-state woocommerce-invalid woocommerce-invalid-required-field validate-required" id="billing_state_field" data-o_class="form-row form-row form-row-first address-field validate-required validate-state woocommerce-invalid woocommerce-invalid-required-field"><label for="billing_state" class="">State / Country <abbr class="required" title="required">*</abbr></label>
+					<p class="form-row form-row form-row-first address-field validate-state woocommerce-invalid woocommerce-invalid-required-field validate-required" id="billing_state_field" data-o_class="form-row form-row form-row-first address-field validate-required validate-state woocommerce-invalid woocommerce-invalid-required-field"><label for="billing_state" class="">Select Province <abbr class="required" title="required">*</abbr></label>
 					<br>
 					<?php echo form_error('province'); ?>
 					<select name="province" id="province" class="state_select " placeholder="" title="Province *">

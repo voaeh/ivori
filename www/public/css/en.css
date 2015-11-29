@@ -21,3 +21,10 @@ body{
 .account-title, .account-login-title{
 	font-size:36px;
 }
+.popup-cart-title{
+	font-size:26px;
+	font-weight:bold;
+}
+.checkout-complete{
+	font-size:26px;
+}

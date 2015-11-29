@@ -55,7 +55,14 @@
 			<div class="main-menu-right">
 				<ul>
 					<li>
-						<a href="<?php echo site_url('cart'); ?>">My cart ( 0 )</a>
+						<?php
+							$productCount = 0;
+							if (isset($_SESSION['cart']))
+							{
+								$productCount = count($this->session->userdata('cart'));
+							}
+						?>
+						<a href="<?php echo site_url('cart'); ?>">My cart ( <?php echo $productCount ?> )</a>
 					</li>
 					<li>
 						<a href="https://localhost/wordpress/my-account/" title="My Account">My Account</a>

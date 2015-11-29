@@ -30,6 +30,8 @@ class Productmodel extends CI_Model
 				$q->like('product_name_en', $value);
 				$q->or_like('product_name_th', $value);
 			break;
+			case 'product_array':
+				$q->where_in('product_id', $value);
 			default:
 				$q->where($key, $value);
 		}

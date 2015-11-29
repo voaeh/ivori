@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="<?php echo base_url('public/css/'.$this->session->userdata('lang').'.css');?>">
   <script type="text/javascript" src="<?php echo base_url('public/js/jquery-1.11.1.min.js');?>"></script>
   <script type="text/javascript" src="<?php echo base_url('public/js/jquery.meanmenu.js');?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('public/js/slick.min.js');?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('public/js/common.js');?>"></script>
 </head>
 <body>
   <div id="wrap">
@@ -45,8 +47,8 @@
 	
   </div>
   
+  <?php $this->load->view('_popup_cart.php');?>
+  
   <input type="hidden" id="home_url" value="<?php echo site_url('top') ?>" />
-  <script type="text/javascript" src="<?php echo base_url('public/js/slick.min.js');?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('public/js/common.js');?>"></script>
 </body>
 </html>

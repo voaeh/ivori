@@ -1,5 +1,5 @@
 body{
-	width:100%;
+	max-width:100%;
 	margin:0px;
 	padding:0px;
 	text-align:center;
@@ -26,6 +26,9 @@ a, a:hover, a:active, a:focus{
 }
 .img-25{
 	width:25%;
+}
+.img-50{
+	width:50%;
 }
 .red{
 	color:red;
@@ -3872,3 +3875,37 @@ footer {
             transition: all 0.5s;
             -webkit-transition: all 0.5s;
             color: #95a83f; }
+			
+/**popup cart**/
+.popup-button{
+	background: #95a83f;
+    color: #fff;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 0 35px;
+    display: block;
+    margin: 25px 0 15px 0;
+    min-height: 40px;
+    border-radius: 40px;
+    border: 1px solid #c2c2c2;
+}
+.popup-table{
+	margin:auto;
+}
+.popup-close-button{
+	margin-top:-60px;
+}
+.overlay{
+	height:100%;
+	width:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	z-index:1 !important;
+	background-color:black;
+	filter: alpha(opacity=50); /* internet explorer */
+	-khtml-opacity: 0.50;      /* khtml, old safari */
+	-moz-opacity: 0.50;       /* mozilla, netscape */
+	opacity: 0.50;           /* fx, safari, opera */
+	display:none;
+}

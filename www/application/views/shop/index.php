@@ -51,7 +51,7 @@
 							<?php echo $product->price ?> Baht
 						</div>
 						<div class="feature-button-block">
-							<a href=""><button class="feature-button">ADD TO CART</button></a>
+							<a href="javascript:void(0)" onclick="addToCart('<?php echo $product->product_id ?>','1')"><button class="feature-button">ADD TO CART</button></a>
 						 </div>
 				</div>
 				<?php } ?>
@@ -63,15 +63,15 @@
 			<?php foreach($productList as $product) { ?>
 			<div class="shop-product-hon">
 					<div class="product-hon-img">
-						<a href="<?php echo site_url('product'); ?>?id=<?php echo $product->product_id ?>"><img src="<?php echo base_url('public/img/product/'.$product->product_id.'/'.$product->main_image); ?>" class="img-100" /></a>
+						<a href="<?php echo site_url('product/index/id/'.$product->product_id); ?>"><img src="<?php echo base_url('public/img/product/'.$product->product_id.'/'.$product->main_image); ?>" class="img-100" /></a>
 					</div>
 					<div class="product-hon-desc">
-						<div class="product-hon-title"><a href="<?php echo site_url('product'); ?>"><?php $product_name_en = 'product_name_'.$lang; echo $product->$product_name_en; ?></a></div>
+						<div class="product-hon-title"><a href="<?php echo site_url('product/index/id/'.$product->product_id); ?>"><?php $product_name_en = 'product_name_'.$lang; echo $product->$product_name_en; ?></a></div>
 						<div class="product-line">
 						<div class="product-hon-text"><?php $short_detail = 'short_detail_'.$lang; echo $product->$short_detail ?></div>
 						<div class="product-hon-price"><?php echo $product->price ?> Baht</div>
 						<div class="product-button-block">
-							<a href=""><button class="product-button">ADD TO CART</button></a>
+							<button class="product-button" onclick="addToCart('<?php echo $product->product_id ?>','1')">ADD TO CART</button>
 						</div>
 					</div>
 				</div>
