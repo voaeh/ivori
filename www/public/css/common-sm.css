@@ -53,3 +53,18 @@
 	padding-left:0;
 	padding-right:0;
 }
+/**popup cart**/
+.popup-cart{
+	position:fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -250px;
+	background-color:#F7F7F7;
+	width:500px;
+	height:260px;
+	border:1px solid #cccccc;
+	text-align:center;
+	z-index:99999;
+	display:none;
+}

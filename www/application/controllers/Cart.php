@@ -77,6 +77,7 @@ class Cart extends CI_Controller {
 						if ($val['product_id'] == $params['product_id'])
 						{
 							$cart[$key]['quantity'] = $val['quantity'] + $params['quantity'];
+							$cart[$key]['subtotal'] = $cart[$key]['quantity'] * $val['price'];
 							$flg = false;
 						}
 					}

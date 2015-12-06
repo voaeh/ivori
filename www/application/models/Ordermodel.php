@@ -18,4 +18,26 @@ class Ordermodel extends CI_Model
 	return $order_id;
   }
   
+  public function searchByParams($params)
+  {
+	$q = $this->db;
+	
+	foreach($params as $key=>$value)
+	{
+		switch($key){
+			case 'name':
+			break;
+			default:
+				$q->where($key, $value);
+		}
+		
+	}
+		
+	$result = $q->order_by("order_id", "desc")
+				->get($this->TABLE_NAME)
+				->result();
+	return $result;
+   
+  }
+  
 }

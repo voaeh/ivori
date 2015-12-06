@@ -25,7 +25,9 @@ class Customermodel extends CI_Model
 		foreach($params as $key=>$value)
 		{
 			switch($key){
-				case 'product_name':
+				case 'name':
+					$q->like("first_name", $value);
+					$q->or_like("last_name", $value);
 				break;
 				default:
 					$q->where($key, $value);

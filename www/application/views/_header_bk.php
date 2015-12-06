@@ -129,10 +129,10 @@
                                     </li>
                             
                                     <li>
-                                        <a href="notifications.html">Notifications</a>
+                                        <a href="<?php echo site_url('admin_customer/index'); ?>">Customer List</a>
                                     </li>
                                     <li>
-                                        <a href="typography.html">Typography</a>
+                                        <a href="<?php echo site_url('admin_order/index'); ?>">Order List</a>
                                     </li>
                                     <li>
                                         <a href="icons.html"> Icons</a>

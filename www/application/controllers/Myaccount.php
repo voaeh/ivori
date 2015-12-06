@@ -49,6 +49,17 @@ class Myaccount extends CI_Controller {
 					
 					if ($customer_id)
 					{
+						$databaseParams = array();
+						$databaseParams['email'] = $params['reg_email'];
+						$databaseParams['password'] = hash('sha256', $params['reg_password']);
+						$customer = $this->Customermodel->searchByParams($databaseParams);
+						
+						if ($customer)
+						{
+							$this->session->set_userdata('customer_id', $customer[0]->customer_id);
+							$this->session->set_userdata('first_name', $customer[0]->first_name);
+						}
+					
 						$data['success'] = 'Register successfully.';
 						redirect('myaccount/detail');
 					}
@@ -82,14 +93,16 @@ class Myaccount extends CI_Controller {
 						{
 
 							setcookie("customer_id", $customer[0]->customer_id, time() + (10 * 365 * 24 * 60 * 60));
+							setcookie("first_name", $customer[0]->first_name, time() + (10 * 365 * 24 * 60 * 60));
 						}
 						
 						$this->session->set_userdata('customer_id', $customer[0]->customer_id);
+						$this->session->set_userdata('first_name', $customer[0]->first_name);
 						redirect('myaccount/detail');
 					}
 					else
 					{
-						$arrErr['customer'] = 'An error has occurred.' ;
+						$arrErr['customer'] = 'Email or password is wrong.' ;
 						$data['arrErr2'] = $arrErr;
 					}
 				}
@@ -138,7 +151,7 @@ class Myaccount extends CI_Controller {
 			$arrErr = array();
 			if (isset($params['mode']) && $params['mode'] == 'update')
 			{
-				$this->form_validation->set_error_delimiters('<div class="red">', '</div>');
+				$this->form_validation->set_error_delimiters('<br><span class="red">', '</span><br>');
 			
 				$this->form_validation->set_message('required', ' %s required.');
 				$this->form_validation->set_message('max_length', '%s must not exceed 255 characters.');
@@ -187,24 +200,30 @@ class Myaccount extends CI_Controller {
 					$databaseParams['province'] = $params['province'];
 					$databaseParams['address1'] = $params['address1'];
 					$databaseParams['address2'] = $params['address2'];
-					$databaseParams['address2'] = $params['address2'];
+					$databaseParams['update_date'] = date('Y-m-d H:i:s');
 					
-					if (isset($params['new_password']))
+					if (isset($params['new_password']) && $params['new_password'] != '')
 					{
-						$databaseParams['password'] = hash('sha256', $params['new_password']);
-						$databaseParams['update_date'] = date('Y-m-d H:i:s');
-						
-						$result = $this->Customermodel->updateCustomer($this->session->userdata('customer_id'), $databaseParams);
-						
-						if ($result)
-						{
-							$data['success'] = 'Update successfully.';
-						}
-						else
-						{
-							$data['error'] = 'An error has occurred.' ;
-						}
+						$databaseParams['password'] = hash('sha256', $params['new_password']);		
 					}
+					
+					$result = $this->Customermodel->updateCustomer($this->session->userdata('customer_id'), $databaseParams);
+						
+					if ($result)
+					{
+						$data['success'] = 'Update successfully.';
+					}
+					else
+					{
+						$data['error'] = 'An error has occurred.' ;
+					}
+					
+					$databaseParams = array();
+					$databaseParams['customer_id'] = $this->session->userdata('customer_id');
+					
+					$customerData = $this->Customermodel->searchByParams($databaseParams);
+					
+					$data['arrForm'] = (array) reset($customerData);
 				}
 				else
 				{
@@ -222,6 +241,60 @@ class Myaccount extends CI_Controller {
 		$data['current_page'] = 'My Account';
 		$data['content'] = 'my-account/detail';
 		$this->load->view('layout', $data);
+	}
+	
+	public function login()
+	{
+		$params = $this->input->post();
+		
+		if ($params)
+		{
+				$databaseParams = array();
+				$databaseParams['email'] = $params['email'];
+				$databaseParams['password'] = hash('sha256', $params['password']);
+				$customer = $this->Customermodel->searchByParams($databaseParams);
+					
+				if ($customer)
+				{
+					if (isset($params['remember']) && $params['remember'] == 1)
+					{
+
+						setcookie("customer_id", $customer[0]->customer_id, time() + (10 * 365 * 24 * 60 * 60));
+						setcookie("first_name", $customer[0]->first_name, time() + (10 * 365 * 24 * 60 * 60));
+					}
+						
+					$this->session->set_userdata('customer_id', $customer[0]->customer_id);
+					$this->session->set_userdata('first_name', $customer[0]->first_name);
+					
+					$data['status'] = true;
+					
+				}
+				else
+				{
+					$data['status'] = false;
+					$data['message'] = 'Email or password is wrong.' ;
+				}
+				
+				echo json_encode($data);
+				exit;
+		}
+	}
+	
+	public function logout() 
+	{
+		$this->session->unset_userdata('customer_id');
+		$this->session->unset_userdata('first_name');
+		
+		$params = $this->input->get();
+		
+		if (strpos($params['return_url'],"myaccount") > -1)
+		{
+			redirect("top/index");
+		}
+		else
+		{
+			redirect($params['return_url']);
+		}
 	}
 
 }

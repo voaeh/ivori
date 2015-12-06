@@ -11,11 +11,12 @@ class Checkout extends CI_Controller {
 		$this->load->model('Customermodel');
 		$this->load->model('Ordermodel');
 		$this->load->model('Orderdetailmodel');
+		$this->load->library('email');
 	}
 	
 	public function index()
 	{
-		if (!empty($this->session->userdata('cart')))
+		if ($this->session->userdata('cart') != null)
 		{
 			$cart = $this->session->userdata('cart');
 			
@@ -33,6 +34,7 @@ class Checkout extends CI_Controller {
 			$databaseParams = array();
 			$databaseParams['customer_id'] = $this->session->userdata('customer_id');
 			$customer = $this->Customermodel->searchByParams($databaseParams);
+			$data['arrForm'] = (array) reset($customer);
 		}
 		
 		$params = $this->input->post();
@@ -97,12 +99,34 @@ class Checkout extends CI_Controller {
 							$orderDetail = $this->Orderdetailmodel->insertOrder($databaseParams);
 						}
 						
-						redirect('checkout/complete');
+						$subject = "มี order มาใหม่";
+						$body = $params['first_name']." ".$params['last_name']."<br>";
+						$body .= "เบอร์โทร ".$params['tel']."<br>";
+						$body .= "ที่อยู่ ".$params['address1']."<br>";
+						$body .= $params['address2']."<br>";
+						$body .= $params['province']."<br>";
+						$body .= $params['country']."<br>";
+						$body .= $params['zip']."<br>";
+						$body .=  "เลขที่ order = ".$order_id;
+						
+						$this->email->from('admin@ivori.com', 'Admin Ivori');
+						$this->email->to('voaeh@hotmail.com'); 
+
+						$this->email->subject($subject);
+						$this->email->message($body);	
+
+						$this->email->send();
+						
+						//redirect('checkout/complete');
 					}
 					else
 					{
 						$data['error'] = 'An error has occurred.';
 					}
+				}
+				else
+				{
+					$data['arrForm'] = $params;
 				}
 			}
 		}

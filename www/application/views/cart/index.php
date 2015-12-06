@@ -142,7 +142,7 @@
 
 	
 	<div class="wc-proceed-to-checkout">
-
+		<a href="<?php echo site_url("shop") ?>" class="feature-button">Continue Shopping</a>
 		<a href="<?php echo site_url("checkout") ?>" class="feature-button">Check Out</a>
 	</div>
 

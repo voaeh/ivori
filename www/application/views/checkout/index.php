@@ -29,44 +29,44 @@
 		<p class="form-row form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field">
 		<label for="first_name" class="">First Name <abbr class="required" title="required">*</abbr></label>
 		<?php echo form_error('first_name'); ?>
-			<input type="text" class="input-text" name="first_name" id="first_name" placeholder="" value=""></p>
+			<input type="text" class="input-text" name="first_name" id="first_name" placeholder="" value="<?php if (isset($arrForm['first_name'])) echo $arrForm['first_name'] ?>"></p>
 	
 		<p class="form-row form-row form-row-last validate-required" id="billing_last_name_field">
 			<label for="last_name" class="">Last Name <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('last_name'); ?>
-			<input type="text" class="input-text " name="last_name" id="last_name" placeholder="" value=""></p><div class="clear"></div>
+			<input type="text" class="input-text " name="last_name" id="last_name" placeholder="" value="<?php if (isset($arrForm['last_name'])) echo $arrForm['last_name'] ?>"></p><div class="clear"></div>
 	
 		<p class="form-row form-row form-row-wide" id="billing_company_field">
 		<label for="company_name" class="">Company Name</label>
-		<input type="text" class="input-text " name="company_name" id="company_name" placeholder="" value=""></p>
+		<input type="text" class="input-text " name="company_name" id="company_name" placeholder="" value="<?php if (isset($arrForm['company_name'])) echo $arrForm['company_name'] ?>"></p>
 	
 		<p class="form-row form-row form-row-first validate-required validate-email" id="billing_email_field">
 			<label for="email" class="">Email Address <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('email'); ?>
-			<input type="email" class="input-text " name="email" id="email" placeholder="" value=""></p>
+			<input type="email" class="input-text " name="email" id="email" placeholder="" value="<?php if (isset($arrForm['email'])) echo $arrForm['email'] ?>"></p>
 	
 		<p class="form-row form-row form-row-last validate-required validate-phone" id="billing_phone_field">
 			<label for="tel" class="">Phone <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('tel'); ?>
-			<input type="tel" class="input-text " name="tel" id="tel" placeholder="" value=""></p><div class="clear"></div>
+			<input type="tel" class="input-text " name="tel" id="tel" placeholder="" value="<?php if (isset($arrForm['tel'])) echo $arrForm['tel'] ?>"></p><div class="clear"></div>
 	
 		<p class="form-row form-row form-row-wide address-field update_totals_on_change validate-required woocommerce-validated" id="billing_country_field">
 			<label for="country" class="">Country <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('country'); ?>
 			<select name="country" id="country" class="country " placeholder="" title="Country">
 				<option value="">Select country...</option>
-				<option value="Thailand" >Thailand</option>
+				<option value="Thailand" <?php if (isset($arrForm['country']) && $arrForm['country'] == 'Thailand') echo "selected"  ?> >Thailand</option>
 			</select>
 		</p>
 	
 		<p class="form-row form-row form-row-wide address-field validate-required" id="billing_address_1_field">
 		<label for="address1" class="">Address<abbr class="required" title="required">*</abbr></label>
 		<?php echo form_error('address1'); ?>
-		<input type="text" class="input-text " name="address1" id="address1" placeholder="Street address" value=""></p>
+		<input type="text" class="input-text " name="address1" id="address1" placeholder="Street address" value="<?php if (isset($arrForm['address1'])) echo $arrForm['address1'] ?>"></p>
 	
 		<p class="form-row form-row form-row-wide address-field" id="billing_address_2_field">
 			<input type="text" class="input-text " name="address2" id="address2" 
-			placeholder="Apartment, suite, unit etc. (optional)" value=""></p>
+			placeholder="Apartment, suite, unit etc. (optional)" value="<?php if (isset($arrForm['address2'])) echo $arrForm['address2'] ?>"></p>
 	
 		<p class="form-row form-row form-row-first address-field validate-state woocommerce-invalid woocommerce-invalid-required-field validate-required" id="billing_state_field" data-o_class="form-row form-row form-row-first address-field validate-required validate-state woocommerce-invalid woocommerce-invalid-required-field"><label for="billing_state" class="">Select Province <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('province'); ?>
@@ -76,7 +76,7 @@
 			
 			<label for="zip" class="">Postcode / Zip <abbr class="required" title="required">*</abbr></label>
 			<?php echo form_error('zip'); ?>
-			<input type="text" class="input-text " name="zip" id="zip" placeholder="Postcode / Zip" value=""></p>
+			<input type="text" class="input-text " name="zip" id="zip" placeholder="Postcode / Zip" value="<?php if (isset($arrForm['zip'])) echo $arrForm['zip'] ?>"></p>
 	
 		<div class="clear"></div>
 
