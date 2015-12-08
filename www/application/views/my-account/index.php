@@ -9,7 +9,7 @@
 		</div>
 		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 			<div class="top-40">
-				<div class="account-title">My Account</div>
+				<div class="account-title"><?php echo $this->lang->line('menu_my_account');?></div>
 				
 				<div class="col2-set" id="customer_login">
 
@@ -17,7 +17,7 @@
 
 
 		<div class="login-page">
-			<h2>Login</h2>
+			<h2><?php echo $this->lang->line('side_login');?></h2>
 
 			<form method="post" class="login" action="<?php echo site_url('myaccount/index') ?>">
 
@@ -29,26 +29,26 @@
 				</div>
 				<?php } } ?>
 				<p class="form-row form-row-wide top-30">
-					<label for="username">Email address<span class="required">*</span></label>
+					<label for="username"><?php echo $this->lang->line('my_email');?><span class="red">*</span></label>
 					<?php echo form_error('username'); ?>
 					<input type="email" class="input-text" name="username" id="username" value="">
 				</p>
 				<p class="form-row form-row-wide">
-					<label for="password">Password <span class="required">*</span></label>
+					<label for="password"><?php echo $this->lang->line('my_password');?> <span class="red">*</span></label>
 					<?php echo form_error('password'); ?>
 					<input class="input-text" type="password" name="password" id="password">
 				</p>
 
 				
 				<p class="form-row">
-					<input type="submit" class="button" name="login" value="Login">
+					<input type="submit" class="button" name="login" value="<?php echo $this->lang->line('my_login');?>">
 					<label for="rememberme" class="inline" >
 						<input name="rememberme" type="checkbox" id="rememberme" value="forever"> 
-						<span>Remember Me</span>
+						<span><?php echo $this->lang->line('side_remember');?></span>
 					</label>
 				</p>
 				<p class="lost_password">
-					<a href="<?php echo site_url('myaccount/lost_password'); ?>">Lost your password?</a>
+					<a href="<?php echo site_url('myaccount/lost_password'); ?>"><?php echo $this->lang->line('my_lost_password');?></a>
 				</p>
 
 				
@@ -60,7 +60,7 @@
 
 	<div class="col-2">
 
-		<h2>Register</h2>
+		<h2><?php echo $this->lang->line('my_register');?></h2>
 
 		<form method="post" class="register" action="<?php echo site_url('myaccount/index') ?>">
 
@@ -73,21 +73,21 @@
 				</div>
 				<?php } } ?>
 			<p class="form-row form-row-wide top-30">
-				<label for="reg_email">Email address <span class="required">*</span></label>
+				<label for="reg_email"><?php echo $this->lang->line('my_email');?> <span class="required">*</span></label>
 				<?php echo form_error('reg_email'); ?>
 				<input type="email" class="input-text" name="reg_email" id="reg_email" value="">
 			</p>
 
 			
 				<p class="form-row form-row-wide">
-					<label for="reg_password">Password <span class="required">*</span></label>
+					<label for="reg_password"><?php echo $this->lang->line('my_lost_password');?> <span class="required">*</span></label>
 					<?php echo form_error('reg_password'); ?>
 					<input type="password" class="input-text" name="reg_password" id="reg_password">
 				</p>
 
 						
 			<p class="form-row">
-				<input type="submit" class="button" name="register" value="Register">
+				<input type="submit" class="button" name="register" value="<?php echo $this->lang->line('my_register');?>">
 			</p>
 
 			

@@ -26,26 +26,26 @@
 	<div class="header-right">
 		<ul id="menu-pc">
 			<li>
-				<a href="<?php echo site_url('top'); ?>">HOME</a>
+			<a href="<?php echo site_url('top'); ?>"><?php echo $this->lang->line('menu_home');?></a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('shop'); ?>">SHOP</a>
+				<a href="<?php echo site_url('shop'); ?>"><?php echo $this->lang->line('menu_shop');?></a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('blog'); ?>">BLOG</a>
+				<a href="<?php echo site_url('blog'); ?>"><?php echo $this->lang->line('menu_blog');?></a>
 			</li>
 			<li>
 				<?php if ($this->session->userdata('customer_id') == null) { ?>
-				<a href="<?php echo site_url('myaccount'); ?>" title="My Account">My Account</a>
-			<?php }else{ ?>
-				<a href="<?php echo site_url('myaccount/detail'); ?>" title="My Account">My Account</a>
-			<?php } ?>
+					<a href="<?php echo site_url('myaccount'); ?>"><?php echo $this->lang->line('menu_my_account');?></a>
+				<?php }else{ ?>
+					<a href="<?php echo site_url('myaccount/detail'); ?>" ><?php echo $this->lang->line('menu_my_account');?></a>
+				<?php } ?>
 			</li>
 			<li>
-				<a href="<?php echo site_url('contact'); ?>">CONTACT</a>
+				<a href="<?php echo site_url('contact'); ?>"><?php echo $this->lang->line('menu_contact');?></a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('about'); ?>">ABOUT US</a>
+				<a href="<?php echo site_url('about'); ?>"><?php echo $this->lang->line('menu_ABOUTUS');?></a>
 			</li>
 		</ul>
 	</div>
@@ -59,6 +59,11 @@
 			<div class="main-menu-right">
 				<ul>
 					<li>
+						<div class="header-small"><a href="<?php echo site_url('langswitch/switchLanguage/lang/th/uri/'.uri_string());?>">ภาษาไทย <img src="<?php echo base_url("public/img/common/flag_th.jpg") ?>" /></a>
+						| <a href="<?php echo site_url('langswitch/switchLanguage/lang/en/uri/'.uri_string());?>">English <img src="<?php echo base_url("public/img/common/flag_en.jpg") ?>" /></a>
+						</div>
+					</li>
+					<li>
 						<?php
 							$productCount = 0;
 							if (isset($_SESSION['cart']))
@@ -66,20 +71,19 @@
 								$productCount = count($this->session->userdata('cart'));
 							}
 						?>
-						<a href="<?php echo site_url('cart'); ?>">My cart ( <?php echo $productCount ?> )</a>
+						<a href="<?php echo site_url('cart'); ?>"><?php echo $this->lang->line('side_mycart');?> ( <?php echo $productCount ?> )</a>
 					</li>
 					<li>
 						<?php if ($this->session->userdata('customer_id') == null) { ?>
-						<a href="<?php echo site_url('myaccount'); ?>" title="My Account">My Account</a>
+						<a href="<?php echo site_url('myaccount'); ?>" ><?php echo $this->lang->line('menu_my_account');?></a>
 						<?php }else{ ?>
-						<a href="<?php echo site_url('myaccount/detail'); ?>" title="My Account">My Account</a>
+						<a href="<?php echo site_url('myaccount/detail'); ?>" ><?php echo $this->lang->line('menu_my_account');?></a>
 						<?php } ?>
 					</li>
 					<?php if ($this->session->userdata('customer_id') == null) { ?>
-					<div class="clear"></div>
 					<div class="form-login">
 						<li class="poup-login active">
-							<a href="#">Log in</a>
+							<a href="#"><?php echo $this->lang->line('side_login');?></a>
 						</li>
 						<div class="clear"></div>
 
@@ -97,12 +101,12 @@
 								<p class="form-row">									
 									<label for="rememberme" class="inline remember">
 									<input name="head_remember" type="checkbox" id="head_remember" value="1"> 
-									Remember</label>
+									<?php echo $this->lang->line('side_remember');?></label>
 								</p>
 								
 								<div class="clear"></div>
 								<div class="red" id="login-error"></div>
-									<input type="button" class="button" name="login" value="Sign In" onclick="sideLogin()">
+									<input type="button" class="button" name="login" value="<?php echo $this->lang->line('side_signin');?>" onclick="sideLogin()">
 									<p></p>
 							</form>
 						</div>
@@ -110,20 +114,19 @@
 					<div class="clear"></div>
 					<?php }else {?>
 					<li>
-						Hello, <?php echo $this->session->userdata('first_name') ?>
+						<?php echo $this->lang->line('side_hello');?><?php echo $this->session->userdata('first_name') ?>
 					</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('customer_id') == null) { ?>
 					<li class="">
-						<a href="<?php echo site_url("myaccount") ?>">Sign Up</a>
+						<a href="<?php echo site_url("myaccount") ?>"><?php echo $this->lang->line('side_signup');?></a>
 					</li>
 					<?php }else { ?>
 					<li>
-						<a href="<?php echo site_url("myaccount/logout")."?return_url=".site_url(uri_string()) ?>">Log Out</a>
+						<a href="<?php echo site_url("myaccount/logout")."?return_url=".site_url(uri_string()) ?>"><?php echo $this->lang->line('side_logout');?></a>
 					</li>
 					<?php }?>
-												
-					</ul>
+				</ul>
 				</div>
 		</div>
 	</div>
@@ -133,25 +136,26 @@
 	  <nav>
 	  <ul>
 		<li>
-			<a href="<?php echo site_url('top')?>">HOME</a>
+			<a href="<?php echo site_url('top'); ?>"><?php echo $this->lang->line('menu_home');?></a>
 		</li>
 		<li>
-			<a href="<?php echo site_url('shop'); ?>">SHOP</a>
+			<a href="<?php echo site_url('shop'); ?>"><?php echo $this->lang->line('menu_shop');?></a>
 		</li>
 		<li>
-			<a href="<?php echo site_url('blog'); ?>">BLOG</a>
+			<a href="<?php echo site_url('blog'); ?>"><?php echo $this->lang->line('menu_blog');?></a>
 		</li>
 		<li>
-			<a href="<?php echo site_url('myaccount'); ?>">MY ACCOUNT</a>
+			<?php if ($this->session->userdata('customer_id') == null) { ?>
+				<a href="<?php echo site_url('myaccount'); ?>"><?php echo $this->lang->line('menu_my_account');?></a>
+			<?php }else{ ?>
+				<a href="<?php echo site_url('myaccount/detail'); ?>" ><?php echo $this->lang->line('menu_my_account');?></a>
+			<?php } ?>
 		</li>
 		<li>
-			<a href="<?php echo site_url('myaccount'); ?>">CART</a>
+			<a href="<?php echo site_url('contact'); ?>"><?php echo $this->lang->line('menu_contact');?></a>
 		</li>
 		<li>
-			<a href="<?php echo site_url('contact'); ?>">CONTACT</a>
-		</li>
-		<li>
-			<a href="<?php echo site_url('about'); ?>">ABOUT US</a>
+			<a href="<?php echo site_url('about'); ?>"><?php echo $this->lang->line('menu_ABOUTUS');?></a>
 		</li>
 	  </ul>
 	  </nav>

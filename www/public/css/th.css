@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  src: url(../font/montserrat_normal.woff2);
+}
+
+body{
+	font-family: 'Montserrat';
+}
+
+.feature-title, .feature-price, .product-hon-title,.product-hon-price{
+	font-size:20px;
+}
+.product-hon-text{
+	font-size:18px;
+}
+.navi{
+	font-size:16px;
+	color:#000000;
+}
+.account-title, .account-login-title{
+	font-size:36px;
+}
+.popup-cart-title{
+	font-size:26px;
+	font-weight:bold;
+}
+.checkout-complete{
+	font-size:26px;
+}
+#menu-cart .menu-right .main-menu-right ul li{
+	font-size:15px;
+}

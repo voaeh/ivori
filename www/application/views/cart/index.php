@@ -30,11 +30,11 @@
 		<form id="form1" action="<?php echo site_url("cart/updateCart"); ?>" method="post">
 		<input type="hidden" name="mode" id="mode" />
 		<input type="hidden" name="product_id" id="product_id" />
-		<div class="title-order">Your Order</div>
+		<div class="title-order"><?php echo $this->lang->line('cart_yourorder');?></div>
 		
 		<?php if (!isset($cart)) { ?>
 		
-		<div>Your Cart Is Empty.</div>
+		<div><?php echo $this->lang->line('cart_empty');?></div>
 		
 		<?php } else { ?>
 		
@@ -42,11 +42,11 @@
 			<thead>
 				<tr>
 					<th class="product-thumbnail">&nbsp;</th>
-					<th class="product-name">Product</th>
+					<th class="product-name"><?php echo $this->lang->line('cart_product');?></th>
 					<th class="product-remove">&nbsp;</th>
-					<th class="product-price">Price</th>
-					<th class="product-quantity">Quantity</th>
-					<th class="product-subtotal">Total</th>
+					<th class="product-price"><?php echo $this->lang->line('cart_price');?></th>
+					<th class="product-quantity"><?php echo $this->lang->line('cart_quantity');?></th>
+					<th class="product-subtotal"><?php echo $this->lang->line('cart_total');?></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -62,20 +62,20 @@
 						<a href=""><?php echo $val['product_name'] ?></a><br>					
 					</td>
 					<td class="product-price">
-						<span class="amount"><?php echo $val['price'] ?> Baht</span>					
+						<span class="amount"><?php echo $val['price'] ?> <?php echo $this->lang->line('shop_baht');?></span>					
 					</td>
 					<td class="product-quantity">
 						<div class="quantity">
 							<input type="number" step="1" min="0" name="quantity[<?php echo $val['product_id'] ?>]" value="<?php echo $val['quantity'] ?>" title="Qty" class="input-text qty text" size="4"></div>
 					</td>
 					<td class="product-subtotal">
-						<span class="amount"><?php echo $val['subtotal'] ?> Baht</span>					
+						<span class="amount"><?php echo $val['subtotal'] ?> <?php echo $this->lang->line('shop_baht');?></span>					
 					</td>
 				</tr>
 			<?php } ?>
 				<tr>
 					<td colspan="6" class="actions right">
-						<input type="button" class="button" onclick="formSubmit('pc')" name="update_cart" value="Update Cart">
+						<input type="button" class="button" onclick="formSubmit('pc')" name="update_cart" value="<?php echo $this->lang->line('cart_updatecart');?>">
 					</td>
 				</tr>
 
@@ -91,7 +91,7 @@
 				</tr>
 				<tr>
 					<td class="product-thumbnail">
-						<a href="http://localhost/wordpress/product/sample-shampoo/">
+						<a href="">
 							<img width="180" height="180" src="<?php echo base_url('public/img/product/'.$val['product_id'].'/'.$val['main_image']);?>" class="attachment-shop_thumbnail wp-post-image" ></a>					
 					</td>
 				</tr>
@@ -102,18 +102,18 @@
 				</tr>
 				<tr>
 					<td class="product-price">
-						<span class="amount"><?php echo $val['price'] ?> Baht</span>					
+						<span class="amount"><?php echo $val['price'] ?> <?php echo $this->lang->line('shop_baht');?></span>					
 					</td>
 				</tr>
 				<tr>
 					<td class="product-quantity">
 						<div class="quantity">
-						quantity&nbsp;&nbsp;<input type="number" step="1" min="0" name="quantity2[<?php echo $val['product_id'] ?>]" value="<?php echo $val['quantity'] ?>" title="Qty" class="input-text qty text" size="4"></div>
+						<?php echo $this->lang->line('cart_quantity');?>&nbsp;&nbsp;<input type="number" step="1" min="0" name="quantity2[<?php echo $val['product_id'] ?>]" value="<?php echo $val['quantity'] ?>" title="Qty" class="input-text qty text" size="4"></div>
 					</td>
 				</tr>
 				<tr>	
 					<td class="product-subtotal">
-						Total&nbsp;&nbsp;<span class="amount"><?php echo $val['subtotal'] ?> Baht</span>					
+						<?php echo $this->lang->line('cart_total');?>&nbsp;&nbsp;<span class="amount"><?php echo $val['subtotal'] ?> <?php echo $this->lang->line('shop_baht');?></span>					
 					</td>
 				</tr>
 			<?php } ?>
@@ -127,23 +127,23 @@
 
 <div class="cart-collaterals">
 	<div class="cart_totals ">
-	<h2>Cart Totals</h2>
+	<h2><?php echo $this->lang->line('cart_cart_total');?></h2>
 
 	<table cellspacing="0" class="cart-table">
 		<tr class="cart-subtotal">
-			<th>Subtotal</th>
-			<td><span class="amount"><?php echo $total ?> Baht</span></td>
+			<th><?php echo $this->lang->line('cart_subtotal');?></th>
+			<td><span class="amount"><?php echo $total ?> <?php echo $this->lang->line('shop_baht');?></span></td>
 		</tr>
 		<tr class="order-total">
-			<th>Total</th>
-			<td><strong><span class="amount"><?php echo $total ?> Baht</span></strong></td>
+			<th><?php echo $this->lang->line('cart_total');?></th>
+			<td><strong><span class="amount"><?php echo $total ?> <?php echo $this->lang->line('shop_baht');?></span></strong></td>
 		</tr>
 	</table>
 
 	
 	<div class="wc-proceed-to-checkout">
-		<a href="<?php echo site_url("shop") ?>" class="feature-button">Continue Shopping</a>
-		<a href="<?php echo site_url("checkout") ?>" class="feature-button">Check Out</a>
+		<a href="<?php echo site_url("shop") ?>" class="feature-button"><?php echo $this->lang->line('cart_continue');?></a>
+		<a href="<?php echo site_url("checkout") ?>" class="feature-button"><?php echo $this->lang->line('cart_checkout');?></a>
 	</div>
 
 	

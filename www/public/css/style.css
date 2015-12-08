@@ -3909,3 +3909,7 @@ footer {
 	opacity: 0.50;           /* fx, safari, opera */
 	display:none;
 }
+
+.header-small{
+	font-size:14px;
+}

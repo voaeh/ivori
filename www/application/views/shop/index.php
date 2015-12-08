@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 			<div class="sidebar-product">
-				<div class="account-title">Shop</div>
+				<div class="account-title"><?php echo $this->lang->line('shop_title');?></div>
 				<div class="height-sp-20"></div>
 				<div id="woocommerce_product_categories-4">
 					<h2>Category</h2>
@@ -48,10 +48,10 @@
 						<div class="feature-line">
 						</div>
 						<div class="feature-price">
-							<?php echo $product->price ?> Baht
+							<?php echo $product->price ?> <?php echo $this->lang->line('shop_baht');?>
 						</div>
 						<div class="feature-button-block">
-							<a href="javascript:void(0)" onclick="addToCart('<?php echo $product->product_id ?>','1')"><button class="feature-button">ADD TO CART</button></a>
+							<a href="javascript:void(0)" onclick="addToCart('<?php echo $product->product_id ?>','1')"><button class="feature-button"><?php echo $this->lang->line('shop_addtocart');?></button></a>
 						 </div>
 				</div>
 				<?php } ?>
@@ -69,9 +69,9 @@
 						<div class="product-hon-title"><a href="<?php echo site_url('product/index/id/'.$product->product_id); ?>"><?php $product_name_en = 'product_name_'.$lang; echo $product->$product_name_en; ?></a></div>
 						<div class="product-line">
 						<div class="product-hon-text"><?php $short_detail = 'short_detail_'.$lang; echo $product->$short_detail ?></div>
-						<div class="product-hon-price"><?php echo $product->price ?> Baht</div>
+						<div class="product-hon-price"><?php echo $product->price ?> <?php echo $this->lang->line('shop_baht');?></div>
 						<div class="product-button-block">
-							<button class="product-button" onclick="addToCart('<?php echo $product->product_id ?>','1')">ADD TO CART</button>
+							<button class="product-button" onclick="addToCart('<?php echo $product->product_id ?>','1')"><?php echo $this->lang->line('shop_addtocart');?></button>
 						</div>
 					</div>
 				</div>

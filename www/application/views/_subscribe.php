@@ -5,7 +5,7 @@
 		
 		if (email == '')
 		{
-			alert('Please enter email address.');
+			alert('<?php echo $this->lang->line('sub_require_email');?>');
 			return false;
 		}
 		
@@ -13,7 +13,7 @@
 		
 		if (!is_email)
 		{
-			alert('Please provide a valid email address.');
+			alert('<?php echo $this->lang->line('sub_valid_email');?>');
 			return false;
 		}
 		
@@ -21,13 +21,13 @@
 		, function( data ) {
 		  if (data.status)
 		  {
-			  alert('Your have successfully subcribed to newsletter.');
-			  $("#es_msg").html('Subscribed successfully.');
+			  alert('<?php echo $this->lang->line('sub_success_news');?>');
+			  $("#es_msg").html('<?php echo $this->lang->line('sub_successful');?>');
 			  $("#es_msg").show();
 		  }
 		  else
 		  {
-			  $("#es_msg").html('Subscribed fail.');
+			  $("#es_msg").html('<?php echo $this->lang->line('sub_fail');?>');
 			  $("#es_msg").show();
 		  }
 		}, "json");
@@ -43,16 +43,16 @@
 	<div class="container">
 		<div class="bg-subcribe">
 			<div id="email-subscribers-4" class="form-send-letter">
-			<h2>Subscribe Ivori</h2>			
+			<h2><?php echo $this->lang->line('sub_ivori');?></h2>			
 		<div>
 						
-			<div class="es_lablebox">Email *</div>
+			<div class="es_lablebox"><?php echo $this->lang->line('sub_email');?> <span class="red">*</span></div>
 			<div class="es_textbox">
 				<input class="es_textbox_class" name="subcribe_email" id="subcribe_email" value="" maxlength="225" type="text" placeholder="email...">
 			</div>
 			<div class="clear-sp"></div>
 			<div class="es_button">
-				<input class="es_textbox_button" name="es_txt_button" id="es_txt_button" value="Subscribe" type="button" onclick="formSubscribe()">
+				<input class="es_textbox_button" name="es_txt_button" id="es_txt_button" value="<?php echo $this->lang->line('sub_subscribe');?>" type="button" onclick="formSubscribe()">
 			</div>
 
 			<div class="es_msg"><span id="es_msg" style="display:none;"></span></div>

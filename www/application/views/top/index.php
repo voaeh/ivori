@@ -25,7 +25,7 @@
             <div class="content-article">Morbi pretium odio in dapibus varius. Integer sagittis, tellus ac venenatis venenatis, ipsum ligula auctor lectus, suscipit velit quam quis turpis. Fusce scelerisque aliquet commodo.<p></p>
 <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.
             </p></div>
-            <a href=""><button class="read-more-article">Read more</button> </a>
+            <a href=""><button class="read-more-article"><?php echo $this->lang->line('top_readmore');?></button> </a>
           </div>  
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
@@ -78,10 +78,10 @@
 <article id="organic-comming-blog" class="style1">
       <div class="container">
       <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
-        <div class="title-blog">Upcoming blog</div>
+        <div class="title-blog"><?php echo $this->lang->line('top_upcoming');?></div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
-        <div class="see-all-blog"><a href="/organic/blog">See all blogs</a></div>
+        <div class="see-all-blog"><a href="/organic/blog"><?php echo $this->lang->line('top_seeall');?></a></div>
       </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
             
@@ -111,7 +111,7 @@
                 <div>ทดสอบด้านหน้า</div>
               </div>
               <div class="more-info-blog">
-                <a href="http://localhost/wordpress/?post_type=post&amp;p=1554">More info</a>
+                <a href="http://localhost/wordpress/?post_type=post&amp;p=1554"><?php echo $this->lang->line('top_more');?></a>
               </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ Here are the 2 different ways to purchase&nbsp;ORIGINAL ORGANICS herbals‘ prod
 Thank you all so much for your support! &lt;3</div>
               </div>
               <div class="more-info-blog">
-                <a href="http://localhost/wordpress/?post_type=post&amp;p=1348">More info</a>
+                <a href="http://localhost/wordpress/?post_type=post&amp;p=1348"><?php echo $this->lang->line('top_more');?></a>
               </div>
               </div>
             </div>

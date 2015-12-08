@@ -17,8 +17,8 @@
 <article id="post-8" class="post-8 page type-page status-publish hentry">
     <div class="entry-header">
                         
-        <h1 class="entry-title">Account Detail</h1><br>
-		You can change the account details. And delivery address here.
+        <h1 class="entry-title"><?php echo $this->lang->line('my_account_detail');?></h1><br>
+		<?php echo $this->lang->line('my_account_desc');?>
     </div><!-- .entry-header -->
 	
 	    <div class="entry-content">
@@ -27,20 +27,20 @@
 		<input type="hidden" name="mode" value="update" />
 		<div class="col-100" style="border:0">
 			<div class="woocommerce-shipping-fields">
-			<h3>Profile</h3>
+			<h3><?php echo $this->lang->line('my_account_profile');?></h3>
 
 			<table class="account-table">
 			<tr>
 				<td class="a-left">
 					<p class="form-row form-row form-row-first validate-required woocommerce-invalid woocommerce-invalid-required-field" id="billing_first_name_field">
-					<label for="first_name" class="">First Name <abbr class="required" title="required">*</abbr></label>
+					<label for="first_name" class=""><?php echo $this->lang->line('my_firstname');?> <abbr class="required" title="required">*</abbr></label>
 					<?php echo form_error('first_name'); ?>
 					<input type="text" class="input-text" name="first_name" id="first_name" placeholder="" value="<?php if (isset($arrForm['first_name'])) echo $arrForm['first_name'] ?>"></p>
 				</td>
 	
 				<td class="a-right">
 					<p class="form-row form-row form-row-last validate-required" id="billing_last_name_field">
-						<label for="last_name" class="">Last Name <abbr class="required" title="required">*</abbr></label>
+						<label for="last_name" class=""><?php echo $this->lang->line('my_lastname');?> <abbr class="required" title="required">*</abbr></label>
 						<?php echo form_error('last_name'); ?>
 						<input type="text" class="input-text " name="last_name" id="last_name" placeholder="" value="<?php if (isset($arrForm['last_name'])) echo $arrForm['last_name'] ?>">
 					</p>
@@ -49,7 +49,7 @@
 			<tr>
 				<td class="a-left">
 				<p class="form-row form-row form-row-last validate-required" id="billing_last_name_field">
-					<label for="password" class="">Password <abbr class="required" title="required">*</abbr></label>
+					<label for="password" class=""><?php echo $this->lang->line('my_password');?> <abbr class="required" title="required">*</abbr></label>
 					<?php if (isset($arrErr['password'])) { ?>
 						<div class="red">
 							<?php echo $arrErr['password'] ?>
@@ -57,7 +57,7 @@
 					<?php } ?>
 					<input type="password" class="input-text " name="password" id="password" placeholder="" value="">
 					<br>
-					(if not change password. leave blank.)
+					<?php echo $this->lang->line('my_leave_blank');?>
 				</p>
 				</td>
 				<td class="a-right">
@@ -66,14 +66,14 @@
 			<tr>
 				<td class="a-left">
 				<p class="form-row form-row form-row-last validate-required" id="billing_last_name_field">
-					<label for="billing_last_name" class="">New Password <abbr class="required" title="required">*</abbr></label>
+					<label for="billing_last_name" class=""><?php echo $this->lang->line('my_new_password');?> <abbr class="required" title="required">*</abbr></label>
 					<input type="password" class="input-text " name="new_password" id="new_password" placeholder="" value=""><br>
-					(if not change password. leave blank.)
+					<?php echo $this->lang->line('my_leave_blank');?>
 				</p>
 				</td>
 				<td class="a-right">
 					<p class="form-row form-row form-row-last validate-required" id="billing_last_name_field">
-						<label for="billing_last_name" class="">Re-New Password <abbr class="required" title="required">*</abbr></label>
+						<label for="billing_last_name" class=""><?php echo $this->lang->line('my_renew_password');?> <abbr class="required" title="required">*</abbr></label>
 						<?php if (isset($arrErr['renew_password'])) { ?>
 						<div class="red">
 							<?php echo $arrErr['renew_password'] ?>
@@ -82,19 +82,19 @@
 						<?php echo form_error('renew_password'); ?>
 						<input type="password" class="input-text " name="renew_password" id="renew_password" placeholder="" value="">
 						<br>
-						(if not change password. leave blank.)
+						<?php echo $this->lang->line('my_leave_blank');?>
 					</p>
 				</td>
 			</tr>
 			<tr>
 				<td class="a-left">
 					<p class="form-row form-row form-row-wide" id="billing_company_field">
-					<label for="company" class="">Company Name</label>
+					<label for="company" class=""><?php echo $this->lang->line('menu_company');?></label>
 					<input type="text" class="input-text " name="company_name" id="company_name" placeholder="" value="<?php if (isset($arrForm['company_name'])) echo $arrForm['company_name'] ?>"></p>
 				</td>
 				<td class="a-right">
 					<p class="form-row form-row form-row-first validate-required validate-email" id="billing_email_field">
-					<label for="email" class="">Email Address <abbr class="required" title="required">*</abbr></label>
+					<label for="email" class=""><?php echo $this->lang->line('my_email');?> <abbr class="required" title="required">*</abbr></label>
 					<?php echo form_error('email'); ?>
 					<input type="email" class="input-text " name="email" id="email" placeholder="" value="<?php if (isset($arrForm['email'])) echo $arrForm['email'] ?>" disabled></p>
 				</td>
@@ -102,7 +102,7 @@
 			<tr>
 				<td class="a-left">
 					<p class="form-row form-row form-row-last validate-required validate-phone" id="billing_phone_field">
-					<label for="tel" class="">Phone <abbr class="required" title="required">*</abbr></label>
+					<label for="tel" class=""><?php echo $this->lang->line('my_phone');?> <abbr class="required" title="required">*</abbr></label>
 					<?php echo form_error('tel'); ?>
 					<input type="tel" class="input-text " name="tel" id="tel" placeholder="" value="<?php if (isset($arrForm['tel'])) echo $arrForm['tel'] ?>"></p>
 					<div class="clear"></div>
@@ -112,7 +112,7 @@
 						
 						<?php echo form_error('country'); ?>
 						<select name="country" id="country" class="country " placeholder="" title="Country">
-							<option value="">Select country...</option>
+							<option value=""><?php echo $this->lang->line('my_select_country');?></option>
 							<option value="Thailand" selected >Thailand</option>
 						</select>
 					</p>
@@ -121,23 +121,23 @@
 			<tr>
 				<td class="a-left">
 					<p class="form-row form-row form-row-wide address-field validate-required" id="billing_address_1_field">
-					<label for="address1" class="">Address <abbr class="required" title="required">*</abbr></label>
+					<label for="address1" class=""><?php echo $this->lang->line('my_address1');?> <abbr class="required" title="required">*</abbr></label>
 					<?php echo form_error('address1'); ?>
 					<input type="text" class="input-text " name="address1" id="address1" placeholder="Street address" value="<?php if (isset($arrForm['address1'])) echo $arrForm['address1'] ?>"></p>
 				</td>
 				<td class="a-right">
 					<p class="form-row form-row form-row-wide address-field" id="billing_address_2_field">
-					<label for="address2" class="">Address (option)</label>
-					<input type="text" class="input-text " name="address2" id="address2" placeholder="Apartment, suite, unit etc. (optional)" value="<?php if (isset($arrForm['address2'])) echo $arrForm['address2'] ?>"></p>
+					<label for="address2" class=""><?php echo $this->lang->line('my_address2');?></label>
+					<input type="text" class="input-text " name="address2" id="address2" placeholder="<?php echo $this->lang->line('my_address_place');?>" value="<?php if (isset($arrForm['address2'])) echo $arrForm['address2'] ?>"></p>
 				</td>
 			</tr>
 			<tr>
 				<td class="a-left">
-					<p class="form-row form-row form-row-first address-field validate-state woocommerce-invalid woocommerce-invalid-required-field validate-required" id="billing_state_field" data-o_class="form-row form-row form-row-first address-field validate-required validate-state woocommerce-invalid woocommerce-invalid-required-field"><label for="billing_state" class="">Select Province <abbr class="required" title="required">*</abbr></label>
+					<p class="form-row form-row form-row-first address-field validate-state woocommerce-invalid woocommerce-invalid-required-field validate-required" id="billing_state_field" data-o_class="form-row form-row form-row-first address-field validate-required validate-state woocommerce-invalid woocommerce-invalid-required-field"><label for="billing_state" class=""><?php echo $this->lang->line('my_select_province');?> <abbr class="required" title="required">*</abbr></label>
 					<br>
 					<?php echo form_error('province'); ?>
 					<select name="province" id="province" class="state_select " placeholder="" title="Province *">
-						<option value="">Select province…</option>
+						<option value=""><?php echo $this->lang->line('my_select_province');?></option>
 						<option value="Amnat Charoen (อำนาจเจริญ)">Amnat Charoen (อำนาจเจริญ)</option>
 						<option value="Ang Thong (อ่างทอง)">Ang Thong (อ่างทอง)</option>
 						<option value="Ayutthaya (พระนครศรีอยุธยา)">Ayutthaya (พระนครศรีอยุธยา)</option>
@@ -218,7 +218,7 @@
 						</select>
 						</p><p class="form-row form-row form-row-last address-field validate-postcode validate-required" id="billing_postcode_field" data-o_class="form-row form-row form-row-last address-field validate-required validate-postcode">
 						
-						<label for="billing_postcode" class="">Postcode / Zip <abbr class="required" title="required">*</abbr></label>
+						<label for="billing_postcode" class=""><?php echo $this->lang->line('my_zip');?> <abbr class="required" title="required">*</abbr></label>
 						<input type="text" class="input-text " name="zip" id="zip" placeholder="Postcode / Zip" value="<?php if (isset($arrForm['zip'])) echo $arrForm['zip'] ?>"></p>
 				</td>
 				<td class="a-right">
@@ -227,7 +227,7 @@
 		</table>
 			<div class="clear height-20"></div>
 			
-			<a href="javascript:void(0)" class="custom-button" onclick="formSubmit()">Save</a>
+			<a href="javascript:void(0)" class="custom-button" onclick="formSubmit()"><?php echo $this->lang->line('my_save');?></a>
 			
 			</div>	
 		</div>
