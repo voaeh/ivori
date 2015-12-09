@@ -130,6 +130,12 @@
 			<?php } ?>
 		</li>
 		<li>
+			<a href="<?php echo site_url('cart'); ?>"><?php echo $this->lang->line('side_mycart');?> ( <?php echo $productCount ?> )</a>
+		</li>
+		<li>
+			<a href="<?php echo site_url('myaccount/logout'); ?>"><?php echo $this->lang->line('side_logout');?></a>
+		</li>
+		<li>
 			<a href="<?php echo site_url('contact'); ?>"><?php echo $this->lang->line('menu_contact');?></a>
 		</li>
 		<li>
@@ -137,4 +143,8 @@
 		</li>
 	  </ul>
 	  </nav>
+	  
+	  <div class="header-small-sp"><a href="<?php echo site_url('langswitch/switchLanguage/lang/th/uri/'.uri_string());?>">ภาษาไทย <img src="<?php echo base_url("public/img/common/flag_th.jpg") ?>" /></a>
+		| <a href="<?php echo site_url('langswitch/switchLanguage/lang/en/uri/'.uri_string());?>">English <img src="<?php echo base_url("public/img/common/flag_en.jpg") ?>" /></a>
+	  </div>
 </div>

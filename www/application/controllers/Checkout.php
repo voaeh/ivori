@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Checkout extends CI_Controller {
 
+	protected $message1 = '';
+	protected $message2 = '';
+	protected $message3 = '';
+	protected $message4 = '';
+	protected $error7 = '';
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -11,11 +17,44 @@ class Checkout extends CI_Controller {
 		$this->load->model('Customermodel');
 		$this->load->model('Ordermodel');
 		$this->load->model('Orderdetailmodel');
+		$this->load->model('Provincemodel');
 		$this->load->library('email');
+		
+		$lang = get_lang();
+		
+		if ($lang == 'en')
+		{
+			$this->message1 = 'required.';
+			$this->message2 = 'must not exceed 255 characters.';
+			$this->message3 = 'must contain at least 8 characters.';
+			$this->message4 = 'contains an invalid format.';
+			
+			$this->error7 = 'An error has occurred.';
+			
+			
+		}
+		else if ($lang == 'th')
+		{
+			$this->message1 = 'ต้องการ';
+			$this->message2 = 'ต้องไม่เกิน 255 ตัวอักษร';
+			$this->message3 = 'ต้องมีอย่างน้อย 8 ตัวอักษร';
+			$this->message4 = 'มีรูปแบบที่ไม่ถูกต้อง';
+
+			$this->error7 = 'เกิดข้อผิดพลาดขึ้น';
+		}
+		
+		$this->form_validation->set_message('required', ' %s '.$this->message1);
+		$this->form_validation->set_message('max_length', '%s '.$this->message2);
+		$this->form_validation->set_message('min_length', '%s '.$this->message3);
+		$this->form_validation->set_message('valid_email', '%s '.$this->message4);
 	}
 	
 	public function index()
 	{
+		$provinceList = $this->Provincemodel->searchByParams(array());
+		
+		$data['provinceList'] = $provinceList;
+		
 		if ($this->session->userdata('cart') != null)
 		{
 			$cart = $this->session->userdata('cart');
@@ -44,18 +83,15 @@ class Checkout extends CI_Controller {
 			if ($params['mode'] == 'insert')
 			{
 				$this->form_validation->set_error_delimiters('<br><span class="red">', '</span><br>');
-			
-				$this->form_validation->set_message('required', ' %s required.');
-				$this->form_validation->set_message('max_length', '%s must not exceed 255 characters.');
 				
-				$this->form_validation->set_rules('first_name', 'First Name', 'required|max_length[255]');
-				$this->form_validation->set_rules('last_name', 'Last Name', 'required|max_length[255]');
-				$this->form_validation->set_rules('tel', 'Phone', 'required');
-				$this->form_validation->set_rules('country', 'Country', 'required');
-				$this->form_validation->set_rules('address1', 'Address', 'required');
-				$this->form_validation->set_rules('province', 'Province', 'required');
-				$this->form_validation->set_rules('zip', 'Postcode / Zip', 'required');
-				$this->form_validation->set_rules('email', 'Email address', 'required|max_length[255]|valid_email');
+				$this->form_validation->set_rules('first_name', $this->lang->line('my_firstname') ,'required|max_length[255]');
+				$this->form_validation->set_rules('last_name', $this->lang->line('my_lastname'), 'required|max_length[255]');
+				$this->form_validation->set_rules('tel', $this->lang->line('my_phone'), 'required');
+				$this->form_validation->set_rules('country', $this->lang->line('my_country'), 'required');
+				$this->form_validation->set_rules('address1', $this->lang->line('my_address1'), 'required');
+				$this->form_validation->set_rules('province', $this->lang->line('my_province'), 'required');
+				$this->form_validation->set_rules('zip', $this->lang->line('my_zip'), 'required');
+				$this->form_validation->set_rules('email', $this->lang->line('my_email'), 'required|max_length[255]|valid_email');
 				
 				if ($this->form_validation->run() == TRUE)
 				{
@@ -117,11 +153,11 @@ class Checkout extends CI_Controller {
 
 						$this->email->send();
 						
-						//redirect('checkout/complete');
+						redirect('checkout/complete');
 					}
 					else
 					{
-						$data['error'] = 'An error has occurred.';
+						$data['error'] = $this->error7;
 					}
 				}
 				else
@@ -139,6 +175,8 @@ class Checkout extends CI_Controller {
 	
 	public function complete()
 	{
+		$this->session->unset_userdata('cart');
+		
 		$data['current_page'] = 'check out';
 		$data['content'] = 'checkout/complete';
 		$this->load->view('layout', $data);

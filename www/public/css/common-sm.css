@@ -68,3 +68,25 @@
 	z-index:99999;
 	display:none;
 }
+.header-small-sp{
+	margin:auto;
+	text-align:center;
+	margin-top:10px;
+}
+.header-small-sp a{
+	color: #898989;
+}
+
+.account-table{
+	width:100%;
+}
+
+.account-table .a-left{
+	width:100%;
+	float:left;
+}
+
+.account-table .a-right{
+	width:100%;
+	float:left;
+}

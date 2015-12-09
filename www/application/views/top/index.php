@@ -1,4 +1,4 @@
-<div class="clear height-40"></div>
+<div class="clear height-10"></div>
 
 <div id="ivori-banner" class="slider single-item">
 	<div>

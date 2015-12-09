@@ -8,7 +8,7 @@ $lang['menu_contact'] = 'CONTACT';
 $lang['menu_ABOUTUS'] = 'ABOUT US';
 
 //side header
-$lang['side_mycart'] = 'My cart';
+$lang['side_mycart'] = 'My Cart';
 $lang['side_login'] = 'Log in';
 $lang['side_remember'] = 'Remember';
 $lang['side_signin'] = 'Sign In';
@@ -54,12 +54,15 @@ $lang['my_renew_password'] = 'Re-New Password';
 $lang['my_company'] = 'Company Name';
 $lang['my_phone'] = 'Phone';
 $lang['my_select_country'] = 'Select country...';
+$lang['my_country'] = 'Country';
 $lang['my_address1'] = 'Address';
 $lang['my_address2'] = 'Address (option)';
 $lang['my_address_place'] = 'Apartment, suite, unit etc. (optional)';
 $lang['my_select_province'] = 'Select Province...';
+$lang['my_province'] = 'Province';
 $lang['my_zip'] = 'Postcode / Zip';
 $lang['my_save'] = 'Save';
+$lang['my_send'] = 'Send';
 
 //cart
 $lang['cart_yourorder'] = 'Your Order';
@@ -82,4 +85,12 @@ $lang['checkout_order_note'] = 'Order Notes';
 $lang['checkout_return'] = 'Returning customer?';
 $lang['checkout_login'] = 'Click here to login';
 $lang['checkout_note_place'] = 'Notes about your order, e.g. special notes for delivery.';
+
+//lost password
+$lang['lost_password'] = 'Lost Password';
+$lang['lost_detail'] = 'Please enter the registered email address. How to set a new password will be sent to your email address.';
+
+//reset password
+$lang['reset_password'] = 'Reset Password';
+$lang['reset_can'] = 'Can set a new password here.';
 
