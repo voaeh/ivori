@@ -202,7 +202,7 @@ class Myaccount extends CI_Controller {
 					$url = site_url("myaccount/reset_password")."?id1=".$customer[0]->customer_id."&id2=".$customer[0]->password;
 					$body .= "<a href='".$url."'>".$url."</a>";
 					
-					$this->email->from('admin@ivori.com', 'Admin Ivori');
+					$this->email->from('no-reply@ivori.co.th', 'no-reply@ivori.co.th');
 					$this->email->to($params['email']); 
 
 					$this->email->subject($subject);

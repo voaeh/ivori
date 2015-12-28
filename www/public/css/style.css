@@ -616,7 +616,7 @@ a, a:hover, a:active, a:focus{
       padding-left: 15px; }
       @media only screen and (max-width: 1025px) {
         #organic-send-mail .form-send-letter .es_textbox_class {
-          width: 285px; } }
+          width: 87%; } }
     
     #organic-send-mail .form-send-letter .es_textbox_button {
       border: 3px solid #95a83f;
@@ -2661,7 +2661,7 @@ a, a:hover, a:active, a:focus{
     padding: 0 40px; }
   
   #organic-content-grid.blog-left ul {
-    padding: 0; }
+    /**padding: 0;**/ }
   
   #organic-content-grid.blog-left #ajax-load-more .alm-btn-wrap #load-more {
     margin-left: 0; }

@@ -132,9 +132,11 @@
 		<li>
 			<a href="<?php echo site_url('cart'); ?>"><?php echo $this->lang->line('side_mycart');?> ( <?php echo $productCount ?> )</a>
 		</li>
+		<?php if ($this->session->userdata('customer_id') != null) { ?>
 		<li>
 			<a href="<?php echo site_url('myaccount/logout'); ?>"><?php echo $this->lang->line('side_logout');?></a>
 		</li>
+		<?php } ?>
 		<li>
 			<a href="<?php echo site_url('contact'); ?>"><?php echo $this->lang->line('menu_contact');?></a>
 		</li>

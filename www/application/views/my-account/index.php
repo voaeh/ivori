@@ -73,14 +73,14 @@
 				</div>
 				<?php } } ?>
 			<p class="form-row form-row-wide top-30">
-				<label for="reg_email"><?php echo $this->lang->line('my_email');?> <span class="required">*</span></label>
+				<label for="reg_email"><?php echo $this->lang->line('my_email');?> <span class="red">*</span></label>
 				<?php echo form_error('reg_email'); ?>
 				<input type="email" class="input-text" name="reg_email" id="reg_email" value="">
 			</p>
 
 			
 				<p class="form-row form-row-wide">
-					<label for="reg_password"><?php echo $this->lang->line('my_lost_password');?> <span class="required">*</span></label>
+					<label for="reg_password"><?php echo $this->lang->line('my_lost_password');?> <span class="red">*</span></label>
 					<?php echo form_error('reg_password'); ?>
 					<input type="password" class="input-text" name="reg_password" id="reg_password">
 				</p>

@@ -179,10 +179,15 @@
 		</tr>
 		<tr class="cart_item">
 			<td class="product-total">
-				<span class="amount"><?php echo $this->lang->line('cart_total');?> <?php echo $val['subtotal'] ?> <?php echo $this->lang->line('shop_baht');?></span>						
+				<span class="amount"><?php echo $this->lang->line('cart_subtotal');?> <?php echo $val['subtotal'] ?> <?php echo $this->lang->line('shop_baht');?></span>						
 			</td>
 		</tr>
 		<?php } } ?>
+		<tr class="cart_item">
+			<td class="product-total">
+				<span class="amount"><b><?php echo $this->lang->line('cart_total');?></b> <?php echo $total ?> <?php echo $this->lang->line('shop_baht');?></span>						
+			</td>
+		</tr>
 	</table>
 
 

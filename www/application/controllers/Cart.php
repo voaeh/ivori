@@ -13,9 +13,8 @@ class Cart extends CI_Controller {
 	
 	public function index()
 	{
-		if (!empty($this->session->userdata('cart')))
+		if ($this->session->userdata('cart') != null)
 		{
-			
 			$cart = $this->session->userdata('cart');
 			
 			$total = 0;
@@ -67,7 +66,7 @@ class Cart extends CI_Controller {
 				$databaseParams['product_id'] = $params['product_id'];
 				$productList = $this->Productmodel->searchByParams($databaseParams);
 				
-				if (!empty($this->session->userdata('cart')))
+				if ($this->session->userdata('cart') != null)
 				{
 					$cart = $this->session->userdata('cart');
 					
@@ -153,7 +152,7 @@ class Cart extends CI_Controller {
 		
 		if ($params)
 		{
-			if (!empty($this->session->userdata('cart')))
+			if ($this->session->userdata('cart') != null)
 			{
 				
 				$cart = $this->session->userdata('cart');
@@ -174,11 +173,13 @@ class Cart extends CI_Controller {
 					{
 						$updateQuantity = $params['quantity'];
 						$cart[$key]['quantity'] = $updateQuantity[$val['product_id']];
+						$cart[$key]['subtotal'] = $cart[$key]['quantity'] * $cart[$key]['price'];
 					}
 					else if ($params['mode'] == 'sp')
 					{
 						$updateQuantity = $params['quantity2'];
 						$cart[$key]['quantity'] = $updateQuantity[$val['product_id']];
+						$cart[$key]['subtotal'] = $cart[$key]['quantity'] * $cart[$key]['price'];
 					}
 					
 					$databaseParams = array();
@@ -195,7 +196,7 @@ class Cart extends CI_Controller {
 						$cart[$key]['price'] = $product[0]->price;
 						$cart[$key]['main_image'] = $product[0]->main_image;
 						
-						$subtotal = $val['quantity'] * $cart[$key]['price'];
+						$subtotal = $cart[$key]['quantity'] * $cart[$key]['price'];
 						
 						$cart[$key]['subtotal'] = $subtotal;
 						
