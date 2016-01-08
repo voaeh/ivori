@@ -1,14 +1,20 @@
 $(this).ready(function(){
-	$("#menu-right-button").mouseenter(function () {
-		if($(".menu-right-layout").css('display') === 'none') {
+	
+	$(".menu-right-layout").hide();
+	
+	$("#menu-right-button").click(function () {
+		if(!$(".menu-right-layout").is(":visible")) {
 			$("#menu-right-button").addClass("activelink-menu");
 			$(".menu-right-layout").show();
 		}
+		else
+		{
+			$("#menu-right-button").removeClass("activelink-menu");
+			$(".menu-right-layout").hide();
+		}
     });
-    $(".menu-right-layout").mouseleave(function () {
-		$("#menu-right-button").removeClass("activelink-menu");
-		$(".menu-right-layout").hide();
-    });
+	
+
 	
 	$("#grid").click(function () {
 		$("#grid").addClass("active");

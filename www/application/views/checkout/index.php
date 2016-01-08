@@ -116,7 +116,7 @@
 			</tr>
 		</thead>
 		<tbody>
-		<?php if (!empty($this->session->userdata('cart'))) { 
+		<?php if ($this->session->userdata('cart') != null) { 
 			$cart = $this->session->userdata('cart');
 			foreach($cart as $val) {
 		?>
@@ -157,7 +157,7 @@
 		<tr>
 			<th class="product-name"><?php echo $this->lang->line('cart_product');?></th>
 		</tr>
-		<?php if (!empty($this->session->userdata('cart'))) { 
+		<?php if ($this->session->userdata('cart') != null) { 
 			$cart = $this->session->userdata('cart');
 			foreach($cart as $val) {
 		?>

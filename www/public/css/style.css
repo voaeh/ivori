@@ -188,7 +188,7 @@ a, a:hover, a:active, a:focus{
                 transform: translateY(0px) rotate(90deg);
         bottom: 0; }
     
-    #menu-cart .link-menu:hover span:before {
+    /**#menu-cart .link-menu:hover span:before {
       -webkit-transform: translateY(0px) rotate(90deg);
           -ms-transform: translateY(0px) rotate(90deg);
               transform: translateY(0px) rotate(90deg);
@@ -198,7 +198,7 @@ a, a:hover, a:active, a:focus{
       -webkit-transform: translateY(0px) rotate(90deg);
           -ms-transform: translateY(0px) rotate(90deg);
               transform: translateY(0px) rotate(90deg);
-      bottom: 0; }
+      bottom: 0; }**/
   
   #menu-cart .trigger {
     -webkit-backface-visibility: hidden;

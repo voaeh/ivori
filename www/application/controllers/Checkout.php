@@ -68,7 +68,7 @@ class Checkout extends CI_Controller {
 			$data['total'] = $total;
 		}
 		
-		if (!empty($this->session->userdata('customer_id')))
+		if ($this->session->userdata('customer_id') != null)
 		{
 			$databaseParams = array();
 			$databaseParams['customer_id'] = $this->session->userdata('customer_id');
@@ -97,7 +97,7 @@ class Checkout extends CI_Controller {
 				{
 					$databaseParams = array();
 					
-					if (!empty($this->session->userdata('customer_id'))) {
+					if ($this->session->userdata('customer_id') != null) {
 						$databaseParams['customer_id'] = $this->session->userdata('customer_id');
 					}
 					
